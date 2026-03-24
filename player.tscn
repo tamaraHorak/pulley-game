@@ -1,11 +1,58 @@
 [gd_scene format=3 uid="uid://dume0xbsh2c3k"]
 
 [ext_resource type="Script" uid="uid://bkm88u86ek33d" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://c5cboq78mg056" path="res://art/player/Crouch.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bo55u3oo4wgoj" path="res://art/player/Jumping.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://b56e1eqyl6yjs" path="res://art/player/Standing vrai .png" id="4_dw050"]
+[ext_resource type="Texture2D" uid="uid://cqjbmpvqr66kf" path="res://art/player/Walking 1.png" id="5_b26j0"]
+[ext_resource type="Texture2D" uid="uid://ccfhmm6au3xge" path="res://art/player/Walking 2.png" id="6_n7ghd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvl01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2hs0m")
+}],
+"loop": true,
+"name": &"crouching",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1jxqw")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dw050")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n7ghd")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
 
 [node name="Player" type="Area2D" unique_id=920794921]
 script = ExtResource("1_4flbx")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20790947]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_nvl01")
+animation = &"crouching"
+frame_progress = 0.01656407
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536365626]
