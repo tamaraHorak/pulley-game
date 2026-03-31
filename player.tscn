@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dume0xbsh2c3k"]
 
-[ext_resource type="Script" uid="uid://bkm88u86ek33d" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://dp8lw7jjebiht" path="res://art/player/crouching_2.png" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bo55u3oo4wgoj" path="res://art/player/Jumping.png" id="3_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://nvfdxl0tmo5q" path="res://art/player/Standing.png" id="4_1jxqw"]
@@ -48,15 +47,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
 size = Vector2(105, 188)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
+size = Vector2(120, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jxqw"]
+size = Vector2(143, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw050"]
+size = Vector2(128, 188)
+
 [node name="Player" type="CharacterBody2D" unique_id=305184656]
-script = ExtResource("1_4flbx")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20790947]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"crouching"
+animation = &"walking"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536365626]
+[node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=1536365626]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_2hs0m")
+
+[node name="CollisionCrouching" type="CollisionShape2D" parent="." unique_id=7904946]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_sweqy")
+
+[node name="CollisionJumping" type="CollisionShape2D" parent="." unique_id=2121764441]
+position = Vector2(-3.5, 3.5)
+shape = SubResource("RectangleShape2D_1jxqw")
+
+[node name="CollisionWalking" type="CollisionShape2D" parent="." unique_id=238869774]
+position = Vector2(4, -4)
+shape = SubResource("RectangleShape2D_dw050")

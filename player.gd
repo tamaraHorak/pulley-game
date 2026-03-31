@@ -20,8 +20,16 @@ func _physics_process(delta):
 	if Input.is_action_pressed("crouch") and is_on_floor():
 		is_crouching = true
 		$AnimatedSprite2D.play("crouching")
+		$CollisionCrouching.disabled = false
+		$CollisionStanding.disabled = true
+		$CollisionJumping.disabled = true
+		$CollisionWalking.disabled = true
 	else:
 		is_crouching = false
+		$CollisionCrouching.disabled = true
+		$CollisionStanding.disabled = false
+		$CollisionJumping.disabled = true
+		$CollisionWalking.disabled = true
 
 	if not is_crouching:
 		if Input.is_action_pressed("move_right"):
@@ -36,10 +44,22 @@ func _physics_process(delta):
 
 		if not is_on_floor():
 			$AnimatedSprite2D.play("jumping")
+			$CollisionCrouching.disabled = true
+			$CollisionStanding.disabled = true
+			$CollisionJumping.disabled = false
+			$CollisionWalking.disabled = true
 		elif velocity.x != 0:
 			$AnimatedSprite2D.play("walking")
+			$CollisionCrouching.disabled = true
+			$CollisionStanding.disabled = true
+			$CollisionJumping.disabled = true
+			$CollisionWalking.disabled = false
 		else:
 			$AnimatedSprite2D.stop()
+			$CollisionCrouching.disabled = true
+			$CollisionStanding.disabled = false
+			$CollisionJumping.disabled = true
+			$CollisionWalking.disabled = true
 
 		if velocity.x != 0:
 			$AnimatedSprite2D.flip_h = velocity.x < 0
