@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ds4qli8n7ucps" path="res://block.png" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="3_hn12h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
 
@@ -22,8 +23,11 @@ sources/5 = SubResource("TileSetAtlasSource_hn12h")
 position = Vector2(320, 208)
 
 [node name="Player" parent="." unique_id=920794921 instance=ExtResource("2_hbghi")]
-position = Vector2(-32, -104)
+position = Vector2(-40, -152)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1789639711]
 tile_map_data = PackedByteArray("AAAIAAoABQAAAAAAAAAcAAoABQAAAAAAAAD0/wUABQAAAAAAAAAwAAQABQAAAAAAAADg//7/BQAAAAAAAAD//wAABQAAAAAAAAAAAAAABQAAAAAAAAABAAAABQAAAAAAAAD+/wAABQAAAAAAAAD9////BQAAAAAAAAACAP//BQAAAAAAAAA=")
 tile_set = SubResource("TileSet_ihfcg")
+
+[node name="Moving platform" parent="." unique_id=1515097637 instance=ExtResource("3_hn12h")]
+position = Vector2(-432, 96)

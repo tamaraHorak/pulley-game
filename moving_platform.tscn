@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cxau2xpyrkoq0"]
+
+[ext_resource type="Script" uid="uid://f21ham6juo2g" path="res://moving_platform.gd" id="1_hrpga"]
+[ext_resource type="Texture2D" uid="uid://ds4qli8n7ucps" path="res://block.png" id="1_q06lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrpga"]
+size = Vector2(398, 84)
+
+[node name="Moving platform" type="CharacterBody2D" unique_id=1515097637]
+script = ExtResource("1_hrpga")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163356408]
+position = Vector2(0, -155.75)
+scale = Vector2(1, 0.2113924)
+texture = ExtResource("1_q06lf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=455725534]
+position = Vector2(0, -156)
+shape = SubResource("RectangleShape2D_hrpga")
