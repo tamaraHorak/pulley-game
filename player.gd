@@ -60,3 +60,6 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("standing")
 
 	move_and_slide()
+	
+func pick_up_sac():
+	print("pick")

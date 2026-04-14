@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://cn0lpadouyivt"]
 
 [ext_resource type="Script" uid="uid://dmwm0pibfe0xh" path="res://sac.gd" id="1_bwm47"]
-[ext_resource type="Texture2D" uid="uid://3a5c67xul4xb" path="res://art/Sac 2.png" id="2_hdh84"]
+[ext_resource type="Texture2D" uid="uid://3a5c67xul4xb" path="res://art/Sac 2.png" id="1_htguf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d78da"]
-size = Vector2(294, 388)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwm47"]
+size = Vector2(286, 362)
 
-[node name="Area2D" type="Area2D" unique_id=318350157]
+[node name="Area2D" type="Area2D" unique_id=1824494260]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_bwm47")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30784040]
-position = Vector2(8, -15)
-shape = SubResource("RectangleShape2D_d78da")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1068512361]
+position = Vector2(-10, -38)
+texture = ExtResource("1_htguf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1463988824]
-texture = ExtResource("2_hdh84")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1530501598]
+position = Vector2(-6, -47)
+shape = SubResource("RectangleShape2D_bwm47")

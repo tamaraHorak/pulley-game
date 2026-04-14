@@ -33,5 +33,5 @@ tile_set = SubResource("TileSet_ihfcg")
 [node name="Moving platform" parent="." unique_id=1515097637 instance=ExtResource("3_hn12h")]
 position = Vector2(-432, 96)
 
-[node name="Area2D" parent="." unique_id=318350157 instance=ExtResource("4_ihfcg")]
-position = Vector2(136, -103)
+[node name="Sac1" parent="." unique_id=1824494260 instance=ExtResource("4_ihfcg")]
+position = Vector2(146, -49)
