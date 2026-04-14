@@ -51,32 +51,21 @@ size = Vector2(105, 188)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(120, 143)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jxqw"]
-size = Vector2(143, 203)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw050"]
-size = Vector2(128, 188)
-
 [node name="Player" type="CharacterBody2D" unique_id=305184656]
 script = ExtResource("1_2hs0m")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20790947]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"walking"
+animation = &"crouching"
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=1536365626]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_2hs0m")
+disabled = true
 
 [node name="CollisionCrouching" type="CollisionShape2D" parent="." unique_id=7904946]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_sweqy")
-
-[node name="CollisionJumping" type="CollisionShape2D" parent="." unique_id=2121764441]
-position = Vector2(-3.5, 3.5)
-shape = SubResource("RectangleShape2D_1jxqw")
-
-[node name="CollisionWalking" type="CollisionShape2D" parent="." unique_id=238869774]
-position = Vector2(4, -4)
-shape = SubResource("RectangleShape2D_dw050")
+disabled = true
