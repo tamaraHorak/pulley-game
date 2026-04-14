@@ -20,7 +20,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_hbghi")
 sources/5 = SubResource("TileSetAtlasSource_hn12h")
 
 [node name="Level1" type="Node2D" unique_id=199180177]
-position = Vector2(320, 208)
+position = Vector2(320, 205)
 
 [node name="Player" parent="." unique_id=920794921 instance=ExtResource("2_hbghi")]
 position = Vector2(-40, -152)
