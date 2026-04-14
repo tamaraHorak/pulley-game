@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dume0xbsh2c3k"]
 
+[ext_resource type="Script" uid="uid://bkm88u86ek33d" path="res://player.gd" id="1_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://dp8lw7jjebiht" path="res://art/player/crouching_2.png" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bo55u3oo4wgoj" path="res://art/player/Jumping.png" id="3_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://nvfdxl0tmo5q" path="res://art/player/Standing.png" id="4_1jxqw"]
@@ -57,7 +58,7 @@ size = Vector2(143, 203)
 size = Vector2(128, 188)
 
 [node name="Player" type="CharacterBody2D" unique_id=305184656]
-metadata/_edit_group_ = true
+script = ExtResource("1_2hs0m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20790947]
 scale = Vector2(0.5, 0.5)

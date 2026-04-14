@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ds4qli8n7ucps" path="res://block.png" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="2_hbghi"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="4_ihfcg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
 
@@ -31,3 +32,6 @@ tile_set = SubResource("TileSet_ihfcg")
 
 [node name="Moving platform" parent="." unique_id=1515097637 instance=ExtResource("3_hn12h")]
 position = Vector2(-432, 96)
+
+[node name="Area2D" parent="." unique_id=318350157 instance=ExtResource("4_ihfcg")]
+position = Vector2(136, -103)
