@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var jump_force = -400
 var screen_size # Size of the game window.
 var is_crouching = false
+var platform_velocity := Vector2.ZERO
 
 const GRAVITY = 800
 
@@ -18,9 +19,16 @@ func _physics_process(delta):
 	# Gravity
 	if is_on_floor():
 		velocity.y = 0
+		var collision = get_last_slide_collision()
+		if collision:
+			var collider = collision.get_collider()
+			if collider is AnimatableBody2D:
+				platform_velocity = collider.velocity
+			else:
+				platform_velocity = Vector2.ZERO
 	else:
 		velocity.y += GRAVITY * delta
-
+	
 	# Crouching
 	if Input.is_action_just_pressed("crouch") and is_on_floor():
 		is_crouching = true
@@ -43,14 +51,16 @@ func _physics_process(delta):
 			velocity.x = -speed
 		else:
 			velocity.x = 0
+		if  not is_on_floor():
+			velocity.x += platform_velocity.x
+
 
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_force
-
 		# Flip sprite
 		if velocity.x != 0:
 			$AnimatedSprite2D.flip_h = velocity.x < 0
-
+		
 		# Animations
 		if not is_on_floor():
 			$AnimatedSprite2D.play("jumping")
@@ -58,7 +68,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("walking")
 		else:
 			$AnimatedSprite2D.play("standing")
-
+	print(velocity)
 	move_and_slide()
 	
 func pick_up_sac():

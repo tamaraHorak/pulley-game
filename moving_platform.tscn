@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrpga"]
 size = Vector2(398, 84)
 
-[node name="Moving platform" type="CharacterBody2D" unique_id=1515097637]
+[node name="Moving platform" type="AnimatableBody2D" unique_id=1199004498]
 script = ExtResource("1_hrpga")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163356408]

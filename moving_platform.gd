@@ -1,26 +1,30 @@
-extends CharacterBody2D
+extends AnimatableBody2D
 
-
-@export var speed := 100
+@export var speed := 500
 @export var distance := 200
-@export var direction := Vector2.RIGHT
+@export var direction := Vector2.UP
 
 var start_position
 var moving_forward := true
+var velocity := Vector2.ZERO
 
 func _ready():
-	start_position = global_position
+	start_position = position
 
 func _physics_process(delta):
-	var movement = direction.normalized() * speed
+	var move_dir = direction.normalized()
+	var movement = move_dir * speed
 
 	if moving_forward:
 		velocity = movement
-		if global_position.distance_to(start_position) > distance:
-			moving_forward = true
+		position += movement * delta
+		if position.distance_to(start_position) > distance:
+			moving_forward = false
 	else:
 		velocity = -movement
-		if global_position.distance_to(start_position) < 5:
+		position -= movement * delta
+		if position.distance_to(start_position) < 5:
 			moving_forward = true
 
-	move_and_slide()
+func get_velocity():
+	return velocity

@@ -69,3 +69,5 @@ disabled = true
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_sweqy")
 disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=798736967]
