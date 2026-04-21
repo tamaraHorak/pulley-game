@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bkm88u86ek33d" path="res://player.gd" id="1_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://dp8lw7jjebiht" path="res://art/player/crouching_2.png" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bo55u3oo4wgoj" path="res://art/player/Jumping.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bv176wapey7gc" path="res://art/player/Crouch walking 1.png" id="3_dw050"]
 [ext_resource type="Texture2D" uid="uid://nvfdxl0tmo5q" path="res://art/player/Standing.png" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bfu0f25qg1vck" path="res://art/player/Crouch walking 2.png" id="4_b26j0"]
 [ext_resource type="Texture2D" uid="uid://cqjbmpvqr66kf" path="res://art/player/Walking 1.png" id="5_b26j0"]
 [ext_resource type="Texture2D" uid="uid://ccfhmm6au3xge" path="res://art/player/Walking 2.png" id="6_n7ghd"]
 
@@ -15,6 +17,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"crouching",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dw050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b26j0")
+}],
+"loop": true,
+"name": &"crouching_walk",
 "speed": 5.0
 }, {
 "frames": [{
@@ -58,7 +71,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20790947]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"crouching"
+animation = &"crouching_walk"
+frame_progress = 0.58488846
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=1536365626]
 position = Vector2(0, -4)
