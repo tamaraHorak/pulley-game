@@ -27,8 +27,8 @@ func _physics_process(_delta):
 		var collision = get_last_slide_collision()
 		if collision:
 			var collider = collision.get_collider()
-			if collider is AnimatableBody2D:
-				platform_velocity = collider.velocity
+			if collider.has_method("get_velocity"):
+				platform_velocity = collider.get_velocity()
 			else:
 				platform_velocity = Vector2.ZERO
 	else:
