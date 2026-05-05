@@ -79,7 +79,7 @@ func _physics_process(_delta):
 			$AnimatedSprite2D.play("walking")
 		else:
 			$AnimatedSprite2D.play("standing")
-	print(velocity)
+	print(platform_velocity)
 	move_and_slide()
 	
 func pick_up_sac():
