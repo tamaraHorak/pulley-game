@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="2_hbghi"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="3_hn12h"]
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="4_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="5_rka8t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
 
@@ -39,3 +40,6 @@ position = Vector2(146, -49)
 
 [node name="Moving platform2" parent="." unique_id=1199004498 instance=ExtResource("3_hn12h")]
 position = Vector2(1192, 203)
+
+[node name="Pendulum" parent="." unique_id=1197021097 instance=ExtResource("5_rka8t")]
+position = Vector2(701, -51)

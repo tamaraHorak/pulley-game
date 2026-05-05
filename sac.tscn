@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://dmwm0pibfe0xh" path="res://sac.gd" id="1_bwm47"]
 [ext_resource type="Texture2D" uid="uid://3a5c67xul4xb" path="res://art/Sac 2.png" id="1_htguf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwm47"]
-size = Vector2(286, 362)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwm47"]
+radius = 96.666664
+height = 253.33334
 
-[node name="Area2D" type="Area2D" unique_id=1824494260]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdh84"]
+size = Vector2(279.99997, 356.66666)
+
+[node name="Character2D" type="CharacterBody2D" unique_id=327463806]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_bwm47")
 
@@ -15,5 +19,11 @@ position = Vector2(-10, -38)
 texture = ExtResource("1_htguf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1530501598]
-position = Vector2(-6, -47)
-shape = SubResource("RectangleShape2D_bwm47")
+position = Vector2(-3.3333333, -9.999996)
+shape = SubResource("CapsuleShape2D_bwm47")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1355370361]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1731054061]
+position = Vector2(-3.3333435, -53.33333)
+shape = SubResource("RectangleShape2D_hdh84")

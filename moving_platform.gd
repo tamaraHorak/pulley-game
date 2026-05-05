@@ -7,6 +7,7 @@ extends AnimatableBody2D
 var start_position
 var moving_forward := true
 var velocity := Vector2.ZERO
+var osc:= true
 
 func _ready():
 	start_position = position
@@ -15,7 +16,7 @@ func _physics_process(delta):
 	var move_dir = direction.normalized()
 	var movement = move_dir * speed
 
-	if moving_forward:
+	if moving_forward or not(osc):
 		velocity = movement
 		position += movement * delta
 		if position.distance_to(start_position) > distance:
