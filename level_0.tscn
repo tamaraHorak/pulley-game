@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://cikyc2047cmki"]
+
+[ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="1_v6xcw"]
+[ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="2_smnfn"]
+[ext_resource type="Texture2D" uid="uid://ds4qli8n7ucps" path="res://block.png" id="3_nu7sl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_omks2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwd78"]
+texture = ExtResource("3_nu7sl")
+texture_region_size = Vector2i(320, 320)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+
+[sub_resource type="TileSet" id="TileSet_40rfo"]
+tile_size = Vector2i(320, 320)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_omks2")
+sources/5 = SubResource("TileSetAtlasSource_wwd78")
+
+[node name="Level_0" type="Node2D" unique_id=702516371]
+
+[node name="Player" parent="." unique_id=305184656 instance=ExtResource("1_v6xcw")]
+position = Vector2(-295, -143)
+
+[node name="Pendulum" parent="." unique_id=1197021097 instance=ExtResource("2_smnfn")]
+position = Vector2(279, -204)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=697401558]
+position = Vector2(-36, 0)
+tile_map_data = PackedByteArray("AAAIAAoABQAAAAAAAAAcAAoABQAAAAAAAAD0/wUABQAAAAAAAAAwAAQABQAAAAAAAADg//7/BQAAAAAAAAD//wAABQAAAAAAAAD+/wAABQAAAAAAAAD9////BQAAAAAAAAAFAAAABQAAAAAAAAAGAP//BQAAAAAAAAAEAAAABQAAAAAAAAA=")
+tile_set = SubResource("TileSet_40rfo")
