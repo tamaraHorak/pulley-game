@@ -62,7 +62,7 @@ func _physics_process(_delta):
 			velocity.x = -current_speed
 		else:
 			velocity.x = 0
-		if  not is_on_floor():
+		if not is_on_floor():
 			velocity.x += platform_velocity.x
 
 
@@ -80,6 +80,12 @@ func _physics_process(_delta):
 		else:
 			$AnimatedSprite2D.play("standing")
 	print(platform_velocity)
+	
+	if position.y > 1000:
+		set_physics_process(false)  # stop the player from moving
+		await get_tree().create_timer(0.5).timeout
+		get_tree().reload_current_scene()
+		
 	move_and_slide()
 	
 func pick_up_sac():
@@ -89,6 +95,11 @@ func pick_up_sac():
 func _process(delta):
 	if has_sac and Input.is_action_just_pressed("ui_accept"):
 		drop_sac()
+		
+	if Input.is_action_just_pressed("restart"):
+		set_physics_process(false)
+		await get_tree().create_timer(0.5).timeout
+		get_tree().reload_current_scene()
 		
 func drop_sac():
 	has_sac = false
