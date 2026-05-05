@@ -1,0 +1,50 @@
+[gd_scene format=4 uid="uid://dj6ddu6fxfjum"]
+
+[ext_resource type="Texture2D" uid="uid://ds4qli8n7ucps" path="res://block.png" id="1_hrrrs"]
+[ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="2_3nsov"]
+[ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="3_bgs24"]
+[ext_resource type="Texture2D" uid="uid://taru52ker1yc" path="res://art/Porte.png" id="4_bgs24"]
+[ext_resource type="Script" uid="uid://bui8tn3xgmoud" path="res://door.gd" id="4_gyhs8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5qxt"]
+texture = ExtResource("1_hrrrs")
+texture_region_size = Vector2i(320, 320)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+
+[sub_resource type="TileSet" id="TileSet_3nsov"]
+tile_size = Vector2i(320, 320)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_hbghi")
+sources/5 = SubResource("TileSetAtlasSource_v5qxt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyhs8"]
+size = Vector2(181, 197)
+
+[node name="firstlevel" type="Node2D" unique_id=1175467524]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=452010119]
+rotation = 0.00048953295
+tile_map_data = PackedByteArray("AAABAAAABQAAAAAAAAACAAAABQAAAAAAAAADAAAABQAAAAAAAAAEAAAABQAAAAAAAAD9/wAABQAAAAAAAAD+/wAABQAAAAAAAAD//wAABQAAAAAAAAA=")
+tile_set = SubResource("TileSet_3nsov")
+
+[node name="Player" parent="." unique_id=305184656 instance=ExtResource("2_3nsov")]
+position = Vector2(-642, -94)
+
+[node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("3_bgs24")]
+position = Vector2(-427, -57)
+
+[node name="Door" type="Area2D" parent="." unique_id=1991701341]
+script = ExtResource("4_gyhs8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1460942042]
+position = Vector2(1184, -107)
+scale = Vector2(0.5, 0.46458334)
+texture = ExtResource("4_bgs24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=173422174]
+position = Vector2(1183.5, -99.5)
+shape = SubResource("RectangleShape2D_gyhs8")

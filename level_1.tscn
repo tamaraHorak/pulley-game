@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="4_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="5_rka8t"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ihfcg"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn12h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rka8t"]
 texture = ExtResource("1_3hls8")
 texture_region_size = Vector2i(320, 320)
 0:0/next_alternative_id = 2
@@ -18,8 +18,8 @@ texture_region_size = Vector2i(320, 320)
 [sub_resource type="TileSet" id="TileSet_ihfcg"]
 tile_size = Vector2i(320, 320)
 physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_hbghi")
-sources/5 = SubResource("TileSetAtlasSource_hn12h")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_ihfcg")
+sources/5 = SubResource("TileSetAtlasSource_rka8t")
 
 [node name="Level1" type="Node2D" unique_id=199180177]
 position = Vector2(320, 205)
