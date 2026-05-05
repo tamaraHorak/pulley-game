@@ -1,25 +1,24 @@
 extends AnimatableBody2D
 
-@export var pivot_offset := Vector2(0, -200) # distance du pivot au-dessus
-@export var swing_angle := 45.0 # angle max en degrés
-@export var swing_speed := 2.0 # vitesse du balancement
+@export var swing_angle := 45.0
+@export var swing_speed := 2.0
 
 var time := 0.0
-var pivot_position := Vector2.ZERO
 var velocity := Vector2.ZERO
 var last_position := Vector2.ZERO
+@onready var cord = $"../Line2D"
 
 func _ready():
-	pivot_position = global_position + pivot_offset
 	last_position = global_position
 
 func _physics_process(delta):
 	time += delta * swing_speed
 	
+	var pivot = get_parent().global_position
+	var arm_length = global_position.distance_to(pivot)
 	var angle = deg_to_rad(swing_angle) * sin(time)
 	
-	var arm_length = pivot_offset.length()
-	var new_position = pivot_position + Vector2(
+	var new_position = pivot + Vector2(
 		sin(angle) * arm_length,
 		cos(angle) * arm_length
 	)
@@ -28,6 +27,10 @@ func _physics_process(delta):
 	last_position = global_position
 	global_position = new_position
 	rotation = angle
+	
+	cord.clear_points()
+	cord.add_point(Vector2.ZERO)
+	cord.add_point(to_local(global_position))
 
 func get_velocity():
 	return velocity

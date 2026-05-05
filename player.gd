@@ -18,9 +18,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	var current_speed = speed / 2.0 if has_sac else speed
-	var current_jump = jump_force * 0.9 if has_sac else jump_force
-	var current_gravity = GRAVITY * 1.5 if has_sac else GRAVITY
+	var current_speed = float(speed) / 2.0 if has_sac else float(speed)
+	var current_jump = jump_force * 0.9 if has_sac else float(jump_force)
+	var current_gravity = GRAVITY * 1.5 if has_sac else float(GRAVITY)
 	# Gravity
 	if is_on_floor():
 		velocity.y = 0
