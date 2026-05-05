@@ -4,6 +4,8 @@ extends Node2D
 @export var max_angle := 45.0
 @export var speed := 2.0
 
+@onready var rope = $Rope
+   
 @onready var platform = $"Moving platform"
 
 var time := 0.0
@@ -27,3 +29,11 @@ func _physics_process(delta):
 	
 	velocity = (platform.global_position - last_position) / delta
 	last_position = platform.global_position
+	
+	rope.clear_points()
+	
+	# point 1 = pivot (center of rotation)
+	rope.add_point(Vector2.ZERO)
+	
+	# point 2 = platform position relative to pendulum
+	rope.add_point(platform.position)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nm87is1j8mt0" path="res://pendulum.gd" id="1_ts572"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="2_uxaci"]
+[ext_resource type="Script" uid="uid://kbfcidvvmaps" path="res://mov_plat.gd" id="3_uxaci"]
 
 [node name="Pendulum" type="Node2D" unique_id=1197021097]
 script = ExtResource("1_ts572")
@@ -9,4 +10,6 @@ script = ExtResource("1_ts572")
 [node name="Pivot" type="Node2D" parent="." unique_id=1024599827]
 
 [node name="Moving platform" parent="." unique_id=1199004498 instance=ExtResource("2_uxaci")]
-script = null
+script = ExtResource("3_uxaci")
+
+[node name="Rope" type="Line2D" parent="." unique_id=1053469422]

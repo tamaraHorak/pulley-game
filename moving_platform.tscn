@@ -10,10 +10,10 @@ size = Vector2(398, 84)
 script = ExtResource("1_hrpga")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163356408]
-position = Vector2(0, -155.75)
+position = Vector2(0, 1.75)
 scale = Vector2(1, 0.2113924)
 texture = ExtResource("1_q06lf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=455725534]
-position = Vector2(0, -156)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_hrpga")
