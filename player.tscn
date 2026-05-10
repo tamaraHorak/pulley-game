@@ -65,6 +65,7 @@ size = Vector2(105, 188)
 size = Vector2(120, 143)
 
 [node name="Player" type="CharacterBody2D" unique_id=305184656]
+position = Vector2(568, 334)
 script = ExtResource("1_2hs0m")
 metadata/_edit_group_ = true
 
@@ -85,3 +86,4 @@ shape = SubResource("RectangleShape2D_sweqy")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=798736967]
+enabled = false
