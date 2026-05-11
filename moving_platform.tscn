@@ -46,7 +46,7 @@ sources/4 = SubResource("TileSetAtlasSource_2amh5")
 script = ExtResource("1_hrpga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=455725534]
-position = Vector2(0, 0.21854508)
+position = Vector2(0, 1.4901161e-08)
 scale = Vector2(1, 0.9032641)
 shape = SubResource("RectangleShape2D_hrpga")
 

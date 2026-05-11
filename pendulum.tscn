@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://nm87is1j8mt0" path="res://pendulum.gd" id="1_ts572"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="2_uxaci"]
 [ext_resource type="Script" uid="uid://kbfcidvvmaps" path="res://mov_plat.gd" id="3_uxaci"]
+[ext_resource type="Texture2D" uid="uid://ivxr4q065fjn" path="res://Tileset/3 Objects/Other/Rope.png" id="4_smb5i"]
 
 [node name="Pendulum" type="Node2D" unique_id=1197021097]
 script = ExtResource("1_ts572")
@@ -13,3 +14,6 @@ script = ExtResource("1_ts572")
 script = ExtResource("3_uxaci")
 
 [node name="Rope" type="Line2D" parent="." unique_id=1053469422]
+width = 32.0
+texture = ExtResource("4_smb5i")
+texture_mode = 1

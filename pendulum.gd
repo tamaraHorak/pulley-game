@@ -36,4 +36,4 @@ func _physics_process(delta):
 	rope.add_point(Vector2.ZERO)
 	
 	# point 2 = platform position relative to pendulum
-	rope.add_point(platform.position)
+	rope.add_point(platform.position + Vector2(0, -39))
