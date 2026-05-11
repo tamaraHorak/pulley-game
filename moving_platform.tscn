@@ -1,19 +1,55 @@
-[gd_scene format=3 uid="uid://cxau2xpyrkoq0"]
+[gd_scene format=4 uid="uid://cxau2xpyrkoq0"]
 
 [ext_resource type="Script" uid="uid://f21ham6juo2g" path="res://moving_platform.gd" id="1_hrpga"]
-[ext_resource type="Texture2D" uid="uid://ds4qli8n7ucps" path="res://block.png" id="1_q06lf"]
+[ext_resource type="Texture2D" uid="uid://gw4wqt3knajo" path="res://Tileset/1 Tiles/Tile_03.png" id="2_0kgt5"]
+[ext_resource type="Texture2D" uid="uid://bhcy8e1dc4swt" path="res://Tileset/1 Tiles/Tile_04.png" id="3_1fxty"]
+[ext_resource type="Texture2D" uid="uid://bw1700gmxa1f6" path="res://Tileset/1 Tiles/Tile_01.png" id="4_8rqk5"]
+[ext_resource type="Texture2D" uid="uid://c2ss1wlcco075" path="res://Tileset/1 Tiles/Tile_10.png" id="5_wcckm"]
+[ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="6_a66hm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrpga"]
-size = Vector2(398, 84)
+size = Vector2(398, 86.83739)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_12871"]
+texture = ExtResource("2_0kgt5")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vdq2"]
+texture = ExtResource("3_1fxty")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ily74"]
+texture = ExtResource("4_8rqk5")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ex7l"]
+texture = ExtResource("5_wcckm")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2amh5"]
+texture = ExtResource("6_a66hm")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ypnrn"]
+sources/0 = SubResource("TileSetAtlasSource_12871")
+sources/1 = SubResource("TileSetAtlasSource_7vdq2")
+sources/2 = SubResource("TileSetAtlasSource_ily74")
+sources/3 = SubResource("TileSetAtlasSource_1ex7l")
+sources/4 = SubResource("TileSetAtlasSource_2amh5")
 
 [node name="Moving platform" type="AnimatableBody2D" unique_id=1199004498]
 script = ExtResource("1_hrpga")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163356408]
-position = Vector2(0, 1.75)
-scale = Vector2(1, 0.2113924)
-texture = ExtResource("1_q06lf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=455725534]
-position = Vector2(0, 1.5)
+position = Vector2(0, 0.21854508)
+scale = Vector2(1, 0.9032641)
 shape = SubResource("RectangleShape2D_hrpga")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=172796111]
+tile_map_data = PackedByteArray("AAALAP7/AQAAAAAAAAD0//7/AgAAAAAAAAALAAEAAgAAAAAAADD0/wEAAgAAAAAAAGD0/wAAAwAAAAAAAAALAAAAAwAAAAAAADD2//7/AwAAAAAAAFD3//7/AwAAAAAAAFD4//7/AwAAAAAAAFD5//7/AwAAAAAAAFD6//7/AwAAAAAAAFD7//7/AwAAAAAAAFD8//7/AwAAAAAAAFD9//7/AwAAAAAAAFD+//7/AwAAAAAAAFD///7/AwAAAAAAAFAAAP7/AwAAAAAAAFABAP7/AwAAAAAAAFACAP7/AwAAAAAAAFADAP7/AwAAAAAAAFAEAP7/AwAAAAAAAFAFAP7/AwAAAAAAAFAGAP7/AwAAAAAAAFAHAP7/AwAAAAAAAFAIAP7/AwAAAAAAAFAJAP7/AwAAAAAAAFD2/wEAAwAAAAAAAGD3/wEAAwAAAAAAAGD4/wEAAwAAAAAAAGD5/wEAAwAAAAAAAGD6/wEAAwAAAAAAAGD7/wEAAwAAAAAAAGD8/wEAAwAAAAAAAGD9/wEAAwAAAAAAAGD+/wEAAwAAAAAAAGD//wEAAwAAAAAAAGAAAAEAAwAAAAAAAGABAAEAAwAAAAAAAGACAAEAAwAAAAAAAGADAAEAAwAAAAAAAGAEAAEAAwAAAAAAAGAGAAEAAwAAAAAAAGAHAAEAAwAAAAAAAGAIAAEAAwAAAAAAAGAJAAEAAwAAAAAAAGAKAAEAAwAAAAAAAGD2////BAAAAAAAAAD3/wAABAAAAAAAAAD4/wAABAAAAAAAAAD5/wAABAAAAAAAAAD6/wAABAAAAAAAAAD7/wAABAAAAAAAAAD8/wAABAAAAAAAAAD9/wAABAAAAAAAAAD9////BAAAAAAAAAD+////BAAAAAAAAAD/////BAAAAAAAAAAAAP//BAAAAAAAAAABAP//BAAAAAAAAAACAP//BAAAAAAAAAADAP//BAAAAAAAAAAEAP//BAAAAAAAAAAFAP//BAAAAAAAAAAGAP//BAAAAAAAAAAHAP//BAAAAAAAAAAHAAAABAAAAAAAAAAIAAAABAAAAAAAAAAJAAAABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ypnrn")
