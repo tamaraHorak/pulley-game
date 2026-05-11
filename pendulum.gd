@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var length := 200.0
-@export var max_angle := 45.0
+@export var max_angle := 80.0
 @export var speed := 2.0
 
 @onready var rope = $Rope
@@ -36,4 +36,4 @@ func _physics_process(delta):
 	rope.add_point(Vector2.ZERO)
 	
 	# point 2 = platform position relative to pendulum
-	rope.add_point(platform.position + Vector2(0, -39))
+	rope.add_point(platform.position + Vector2(0,0))

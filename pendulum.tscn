@@ -10,10 +10,10 @@ script = ExtResource("1_ts572")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1024599827]
 
-[node name="Moving platform" parent="." unique_id=1199004498 instance=ExtResource("2_uxaci")]
-script = ExtResource("3_uxaci")
-
 [node name="Rope" type="Line2D" parent="." unique_id=1053469422]
 width = 64.0
 texture = ExtResource("4_smb5i")
 texture_mode = 1
+
+[node name="Moving platform" parent="." unique_id=1199004498 instance=ExtResource("2_uxaci")]
+script = ExtResource("3_uxaci")

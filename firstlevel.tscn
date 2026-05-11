@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="2_3nsov"]
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="3_bgs24"]
 [ext_resource type="Texture2D" uid="uid://taru52ker1yc" path="res://art/Porte.png" id="4_bgs24"]
-[ext_resource type="Script" uid="uid://bui8tn3xgmoud" path="res://door.gd" id="4_gyhs8"]
+[ext_resource type="Script" path="res://door.gd" id="4_gyhs8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
 
@@ -48,3 +48,7 @@ texture = ExtResource("4_bgs24")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=173422174]
 position = Vector2(1183.5, -99.5)
 shape = SubResource("RectangleShape2D_gyhs8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1851059929]
+position = Vector2(303, -49)
+zoom = Vector2(0.7, 0.7)
