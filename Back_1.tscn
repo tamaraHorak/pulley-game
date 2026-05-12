@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="12_6k25e"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="13_lau5l"]
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="15_bl4lt"]
+[ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="16_bl4lt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_lau5l")
@@ -119,7 +120,7 @@ tile_map_data = PackedByteArray("AAARAAkAAgAAAAAAAAARAAgAAQAAAAAAAAANAAkAAwAAAAA
 tile_set = SubResource("TileSet_tqlyp")
 
 [node name="Pendulum" parent="." unique_id=1197021097 instance=ExtResource("13_lau5l")]
-position = Vector2(594, 811)
+position = Vector2(595, 790)
 scale = Vector2(0.53110826, 0.26597062)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=528300435]
@@ -149,3 +150,7 @@ shape = SubResource("WorldBoundaryShape2D_x84p7")
 visible = false
 offset_left = -1.0000001
 offset_right = 1945.0
+
+[node name="Door" parent="." unique_id=173359987 instance=ExtResource("16_bl4lt")]
+position = Vector2(1039, 964.00006)
+scale = Vector2(0.7, 0.7)
