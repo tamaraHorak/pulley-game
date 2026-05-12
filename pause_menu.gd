@@ -8,6 +8,8 @@ extends Control
 var button_type = null
 
 func _ready():
+	if Engine.is_editor_hint():
+		return
 	hide()
 	anim.play("fade_out")
 	if anim.is_playing():

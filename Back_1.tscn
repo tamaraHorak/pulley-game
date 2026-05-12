@@ -155,6 +155,7 @@ next = "res://Back_2.tscn"
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1229077034]
 
 [node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_n0dn3")]
+metadata/_edit_lock_ = true
 
 [node name="Fade" type="CanvasLayer" parent="." unique_id=496048316]
 layer = 100
