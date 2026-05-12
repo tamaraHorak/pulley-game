@@ -35,6 +35,7 @@ sources/0 = SubResource("TileSetAtlasSource_iotk1")
 sources/1 = SubResource("TileSetAtlasSource_w44g7")
 
 [node name="Main Menu" type="Node2D" unique_id=406244280]
+process_mode = 3
 script = ExtResource("1_06t4h")
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1104021785]
@@ -48,6 +49,7 @@ tile_map_data = PackedByteArray(0, 0, 17, 0, 10, 0, 0, 0, 0, 0, 2, 0, 0, 0, 17, 
 tile_set = SubResource("TileSet_cm266")
 
 [node name="Button_manager" type="Control" parent="." unique_id=1947063762]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

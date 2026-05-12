@@ -160,6 +160,5 @@ next = "res://Back_2.tscn"
 layer = 100
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("15_bl4lt")]
-visible = false
 offset_left = -1.0000001
 offset_right = 1945.0

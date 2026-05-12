@@ -16,8 +16,6 @@ func _on_start_pressed():
 	fade_node.show() 
 	fade_timer.start()
 	anim.play("fade_in")
-	
-
 
 func _on_options_pressed():
 	button_type = "options"
@@ -25,12 +23,8 @@ func _on_options_pressed():
 	fade_timer.start()
 	anim.play("fade_in")
 	
-
-
 func _on_quit_pressed():
 	get_tree().quit()
- 
-
 
 func _on_fade_timer_timeout():
 	if button_type == "start" : 

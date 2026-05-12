@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cqik5xh27ray1" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Back  col_Button.png" id="4_kls10"]
 
 [node name="Options" type="Node2D" unique_id=1856664665]
+process_mode = 3
 script = ExtResource("1_se8ut")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=353640714]
@@ -15,9 +16,10 @@ offset_top = -11.0
 offset_right = 1923.0
 offset_bottom = 1101.0
 
-[node name="Layer 1" type="CanvasLayer" parent="." unique_id=1777525935]
+[node name="Control" type="CanvasLayer" parent="." unique_id=1777525935]
+process_mode = 3
 
-[node name="Button control" type="Control" parent="Layer 1" unique_id=1539163054]
+[node name="Button control" type="Control" parent="Control" unique_id=1539163054]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
@@ -25,7 +27,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_ao2gm")
 
-[node name="Back to Main" type="TextureButton" parent="Layer 1/Button control" unique_id=801956240]
+[node name="Back to Main" type="TextureButton" parent="Control/Button control" unique_id=801956240]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -72,5 +74,5 @@ layer = 100
 
 [node name="fade_timer" type="Timer" parent="Fade/Fade_transition" unique_id=1371536466]
 
-[connection signal="pressed" from="Layer 1/Button control/Back to Main" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="Control/Button control/Back to Main" to="." method="_on_back_to_main_pressed"]
 [connection signal="timeout" from="Fade/Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

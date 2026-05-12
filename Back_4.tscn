@@ -149,6 +149,7 @@ shape = SubResource("WorldBoundaryShape2D_x84p7")
 [node name="Door" parent="." unique_id=173359987 instance=ExtResource("15_e1x8d")]
 position = Vector2(1055, 562)
 scale = Vector2(0.7, 0.7)
+next = "res://main_menu.tscn"
 
 [node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("16_pbffy")]
 position = Vector2(120, 535)
