@@ -2,8 +2,49 @@
 
 [ext_resource type="Script" uid="uid://c5u2i3md6q6vc" path="res://options.gd" id="1_se8ut"]
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="2_ao2gm"]
+[ext_resource type="Script" uid="uid://dlk8pbjsvmt4u" path="res://control.gd" id="3_ao2gm"]
 
 [node name="Options" type="Node2D" unique_id=1856664665]
 script = ExtResource("1_se8ut")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=353640714]
+offset_left = -31.0
+offset_top = -11.0
+offset_right = 1923.0
+offset_bottom = 1101.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2108908862]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1539163054]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_ao2gm")
+
+[node name="Back to Main" type="Button" parent="CanvasLayer/Control" unique_id=1608568449]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.0
+anchor_top = 13.5
+anchor_right = 24.0
+anchor_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+text = "Back to Main Menu"
+
 [node name="Fade_transition" parent="." unique_id=1611118378 instance=ExtResource("2_ao2gm")]
+visible = false
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=565249016]
+offset_left = 119.0
+offset_top = 94.0
+offset_right = 1911.0
+offset_bottom = 204.0
+text = "Area currently under development "
+wrap_mode = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/Back to Main" to="." method="_on_back_to_main_pressed"]
