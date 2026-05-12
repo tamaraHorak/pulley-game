@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="13_3iym5"]
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="14_3mtyq"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="15_hev5k"]
+[ext_resource type="PackedScene" uid="uid://prwkuuwjfk2k" path="res://pause_menu.tscn" id="16_275x0"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="16_dfkqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
@@ -161,10 +162,13 @@ scale = Vector2(0.5, 0.5)
 speed = 300
 distance = 300
 
+[node name="Pause" type="CanvasLayer" parent="." unique_id=803553341]
+
+[node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_275x0")]
+
 [node name="Fade" type="CanvasLayer" parent="." unique_id=1381669120]
 layer = 100
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_3mtyq")]
-visible = false
 offset_left = -1.0000001
 offset_right = 1945.0

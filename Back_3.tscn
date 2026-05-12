@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="14_lribv"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="15_ojxkg"]
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="16_8p8ty"]
+[ext_resource type="PackedScene" uid="uid://prwkuuwjfk2k" path="res://pause_menu.tscn" id="16_lyv77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_lyv77")
@@ -150,6 +151,10 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("16_8p8ty")]
 position = Vector2(168.00012, 866)
+
+[node name="Pause" type="CanvasLayer" parent="." unique_id=967721594]
+
+[node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_lyv77")]
 
 [node name="Fade" type="CanvasLayer" parent="." unique_id=373077479]
 layer = 100

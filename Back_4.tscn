@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="14_kngxs"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="15_e1x8d"]
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="16_pbffy"]
+[ext_resource type="PackedScene" uid="uid://prwkuuwjfk2k" path="res://pause_menu.tscn" id="17_30ocd"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="17_is2wa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
@@ -159,10 +160,13 @@ position = Vector2(36, 534)
 position = Vector2(712, 825)
 scale = Vector2(0.5, 0.5)
 
+[node name="Pause" type="CanvasLayer" parent="." unique_id=1023396846]
+
+[node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("17_30ocd")]
+
 [node name="Fade" type="CanvasLayer" parent="." unique_id=1467499113]
 layer = 100
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_kngxs")]
-visible = false
 offset_left = -1.0000001
 offset_right = 1945.0
