@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 400 # How fast the player will move (pixels/sec)
-@export var jump_force = -550
+@export var speed = 350 # How fast the player will move (pixels/sec)
+@export var jump_force = -450
 var screen_size # Size of the game window.
 var is_crouching = false
 var platform_velocity := Vector2.ZERO
@@ -26,8 +26,8 @@ func _physics_process(_delta):
 		velocity.y = 0
 		var collision = get_last_slide_collision()
 		if collision:
-			var collider = collision.get_collider()
-			if collider.has_method("get_velocity"):
+			var collider = collision.get_collider() 
+			if collider and collider.has_method("get_velocity"):
 				platform_velocity = collider.get_velocity()
 			else:
 				platform_velocity = Vector2.ZERO

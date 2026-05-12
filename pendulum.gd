@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var length := 200.0
-@export var max_angle := 80.0
+@export var length := 270.0
+@export var max_angle := 90.0
 @export var speed := 2.0
 
 @onready var rope = $Rope
