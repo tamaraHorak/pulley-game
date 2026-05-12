@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0twnvg4tm1li"
-path="res://.godot/imported/Menu  col_Button.png-f9486ad7c46f288b847c16ffef37a4b0.ctex"
+uid="uid://b5yp4f610342h"
+path="res://.godot/imported/Exit  col_Button.png-c0492c45d79916611d1748fd0850fc65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu Buttons/Large Buttons/Colored Large Buttons/Menu  col_Button.png"
-dest_files=["res://.godot/imported/Menu  col_Button.png-f9486ad7c46f288b847c16ffef37a4b0.ctex"]
+source_file="res://Menu Buttons/Large Buttons/Pressed Buttons/Exit  col_Button.png"
+dest_files=["res://.godot/imported/Exit  col_Button.png-c0492c45d79916611d1748fd0850fc65.ctex"]
 
 [params]
 

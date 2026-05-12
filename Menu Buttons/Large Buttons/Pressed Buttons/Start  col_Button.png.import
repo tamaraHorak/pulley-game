@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck52yx0tnwmv4"
-path="res://.godot/imported/Resume  col_Button.png-4a6d0e3a11efcde2592ec290c1048fe4.ctex"
+uid="uid://jyd6rqgy0vvd"
+path="res://.godot/imported/Start  col_Button.png-92ab455ffd106307b541fe308abd5d3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu Buttons/Large Buttons/Colored Large Buttons/Resume  col_Button.png"
-dest_files=["res://.godot/imported/Resume  col_Button.png-4a6d0e3a11efcde2592ec290c1048fe4.ctex"]
+source_file="res://Menu Buttons/Large Buttons/Pressed Buttons/Start  col_Button.png"
+dest_files=["res://.godot/imported/Start  col_Button.png-92ab455ffd106307b541fe308abd5d3b.ctex"]
 
 [params]
 

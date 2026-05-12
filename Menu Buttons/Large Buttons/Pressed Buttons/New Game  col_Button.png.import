@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqik5xh27ray1"
-path="res://.godot/imported/Back  col_Button.png-6f06831c0c02ced80908f495fbd68639.ctex"
+uid="uid://bmucrows3smcu"
+path="res://.godot/imported/New Game  col_Button.png-78ef27b5a9548922e5ed76a0897198a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu Buttons/Large Buttons/Colored Large Buttons/Back  col_Button.png"
-dest_files=["res://.godot/imported/Back  col_Button.png-6f06831c0c02ced80908f495fbd68639.ctex"]
+source_file="res://Menu Buttons/Large Buttons/Pressed Buttons/New Game  col_Button.png"
+dest_files=["res://.godot/imported/New Game  col_Button.png-78ef27b5a9548922e5ed76a0897198a7.ctex"]
 
 [params]
 

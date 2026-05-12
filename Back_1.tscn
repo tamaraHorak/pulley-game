@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="12_6k25e"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="13_lau5l"]
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="15_bl4lt"]
+[ext_resource type="PackedScene" uid="uid://prwkuuwjfk2k" path="res://pause_menu.tscn" id="16_n0dn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_lau5l")
@@ -153,8 +154,14 @@ shape = SubResource("WorldBoundaryShape2D_hbq8b")
 [node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=803770113]
 shape = SubResource("WorldBoundaryShape2D_x84p7")
 
+[node name="Pause" type="CanvasLayer" parent="." unique_id=697550582]
+layer = 50
+
+[node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_n0dn3")]
+
 [node name="Fade" type="CanvasLayer" parent="." unique_id=1349380997]
 layer = 100
+visible = false
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("15_bl4lt")]
 offset_left = -1.0000001
