@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://bx2e2xiplhqoa"]
 
-[ext_resource type="Script" uid="uid://bk4pm1h11tbyq" path="res://back_1.gd" id="1_k8tuo"]
 [ext_resource type="Texture2D" uid="uid://cpg1seojwhhei" path="res://Tileset/2 Background/Day/1.png" id="2_275x0"]
 [ext_resource type="Texture2D" uid="uid://d3d1ob1vtnpgm" path="res://Tileset/2 Background/Day/2.png" id="3_6q501"]
 [ext_resource type="Texture2D" uid="uid://djnwpfaqsebeu" path="res://Tileset/1 Tiles/Tile_12.png" id="4_2hr53"]
@@ -106,7 +105,6 @@ normal = Vector2(-1, 0)
 distance = -1921.0
 
 [node name="Node2D" type="Node2D" unique_id=777943668]
-script = ExtResource("1_k8tuo")
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1534277841]
 use_parent_material = true
@@ -166,7 +164,7 @@ distance = 300
 
 [node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_275x0")]
 
-[node name="Fade" type="CanvasLayer" parent="." unique_id=1381669120]
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1803311163]
 layer = 100
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_3mtyq")]

@@ -165,7 +165,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("17_30ocd")]
 
-[node name="Fade" type="CanvasLayer" parent="." unique_id=1467499113]
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1354438614]
 layer = 100
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_kngxs")]
