@@ -1,25 +1,33 @@
 extends Node2D
 
+@onready var anim = $Fade/Fade_transition/AnimationPlayer
+@onready var fade_node = $Fade/Fade_transition
+@onready var fade_timer = $Fade/Fade_transition/fade_timer
+
 var button_type = null
 
+func _ready():
+	anim.play("fade_out")
+	await anim.animation_finished  
+	fade_node.hide()  
 
 func _on_start_pressed():
 	button_type = "start"
-	$Fade_transition.show() 
-	$Fade_transition/fade_timer.start()
-	$Fade_transition/AnimationPlayer.play("fade_in")
+	fade_node.show() 
+	fade_timer.start()
+	anim.play("fade_in")
 	
 
 
 func _on_options_pressed():
 	button_type = "options"
-	$Fade_transition.show() 
-	$Fade_transition/fade_timer.start()
-	$Fade_transition/AnimationPlayer.play("fade_in")
+	fade_node.show() 
+	fade_timer.start()
+	anim.play("fade_in")
 	
 
 
-func _on_quit_pressed() -> void:
+func _on_quit_pressed():
 	get_tree().quit()
  
 

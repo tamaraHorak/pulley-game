@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c5u2i3md6q6vc" path="res://options.gd" id="1_se8ut"]
 [ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="2_ao2gm"]
 [ext_resource type="Script" uid="uid://dlk8pbjsvmt4u" path="res://control.gd" id="3_ao2gm"]
+[ext_resource type="Texture2D" uid="uid://doifag2fapmnq" path="res://Menu Buttons/Large Buttons/Large Buttons/Back Button.png" id="3_p8250"]
+[ext_resource type="Texture2D" uid="uid://cqik5xh27ray1" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Back  col_Button.png" id="4_kls10"]
 
 [node name="Options" type="Node2D" unique_id=1856664665]
 script = ExtResource("1_se8ut")
@@ -13,38 +15,62 @@ offset_top = -11.0
 offset_right = 1923.0
 offset_bottom = 1101.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2108908862]
-layer = 2
+[node name="Layer 1" type="CanvasLayer" parent="." unique_id=1777525935]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1539163054]
+[node name="Button control" type="Control" parent="Layer 1" unique_id=1539163054]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_ao2gm")
 
-[node name="Back to Main" type="Button" parent="CanvasLayer/Control" unique_id=1608568449]
-custom_minimum_size = Vector2(400, 200)
+[node name="Back to Main" type="TextureButton" parent="Layer 1/Button control" unique_id=801956240]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 24.0
 anchor_top = 13.5
 anchor_right = 24.0
 anchor_bottom = 13.5
+offset_left = -300.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 localize_numeral_system = false
-text = "Back to Main Menu"
+texture_normal = ExtResource("3_p8250")
+texture_pressed = ExtResource("4_kls10")
 
-[node name="Fade_transition" parent="." unique_id=1611118378 instance=ExtResource("2_ao2gm")]
-visible = false
+[node name="Label control" type="Control" parent="." unique_id=2072026895]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=565249016]
-offset_left = 119.0
-offset_top = 94.0
-offset_right = 1911.0
-offset_bottom = 204.0
+[node name="Label" type="Label" parent="Label control" unique_id=2139437496]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.0
+anchor_top = 7.0
+anchor_right = 24.0
+anchor_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
 text = "Area currently under development "
-wrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/Control/Back to Main" to="." method="_on_back_to_main_pressed"]
+[node name="Fade" type="CanvasLayer" parent="." unique_id=451480148]
+layer = 100
+
+[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("2_ao2gm")]
+
+[node name="fade_timer" type="Timer" parent="Fade/Fade_transition" unique_id=1371536466]
+
+[connection signal="pressed" from="Layer 1/Button control/Back to Main" to="." method="_on_back_to_main_pressed"]
+[connection signal="timeout" from="Fade/Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

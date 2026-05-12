@@ -14,6 +14,9 @@
 [node name="Main Menu" type="Node2D" unique_id=406244280]
 script = ExtResource("1_06t4h")
 
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1104021785]
+tile_set = SubResource("TileSet_8qtwp")
+
 [node name="Button_manager" type="Control" parent="." unique_id=1947063762]
 layout_mode = 3
 anchors_preset = 0
@@ -56,15 +59,13 @@ grow_vertical = 2
 texture_normal = ExtResource("6_j5v2v")
 texture_pressed = ExtResource("7_iotk1")
 
-[node name="Fade_transition" parent="." unique_id=1611118378 instance=ExtResource("2_7vrkn")]
-visible = false
+[node name="Fade" type="CanvasLayer" parent="." unique_id=230908876]
 
-[node name="fade_timer" type="Timer" parent="Fade_transition" unique_id=787070193]
+[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("2_7vrkn")]
 
-[node name="TileMap" type="TileMapLayer" parent="." unique_id=1104021785]
-tile_set = SubResource("TileSet_8qtwp")
+[node name="fade_timer" type="Timer" parent="Fade/Fade_transition" unique_id=787070193]
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
-[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="timeout" from="Fade/Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

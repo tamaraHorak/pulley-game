@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://prwkuuwjfk2k"]
+
+[ext_resource type="Texture2D" uid="uid://4nl16uuoaidk" path="res://Menu Buttons/Large Buttons/Large Buttons/Resume Button.png" id="1_d3xb4"]
+[ext_resource type="Script" uid="uid://cy015h4u66kit" path="res://pause_menu.gd" id="1_e8sti"]
+[ext_resource type="Texture2D" uid="uid://ck52yx0tnwmv4" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Resume  col_Button.png" id="2_mxa3g"]
+[ext_resource type="Shader" uid="uid://bvjnyb5w4kp36" path="res://pause_menu.gdshader" id="2_q2yj1"]
+[ext_resource type="Texture2D" uid="uid://b8msolwkx565g" path="res://Menu Buttons/Large Buttons/Large Buttons/Options Button.png" id="3_e8sti"]
+[ext_resource type="Texture2D" uid="uid://dkqyl4i63dek" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Options  col_Button.png" id="4_q2yj1"]
+[ext_resource type="Texture2D" uid="uid://e4nrsxxj1f6m" path="res://Menu Buttons/Large Buttons/Large Buttons/Menu Button.png" id="5_a32ks"]
+[ext_resource type="Texture2D" uid="uid://d0twnvg4tm1li" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Menu  col_Button.png" id="6_g7dbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a32ks"]
+shader = ExtResource("2_q2yj1")
+shader_parameter/lod = 1.0000000475
+
+[sub_resource type="Animation" id="Animation_g7dbl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0000000475]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lv42l"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0000000475]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ub45p"]
+_data = {
+&"RESET": SubResource("Animation_g7dbl"),
+&"blur": SubResource("Animation_lv42l")
+}
+
+[node name="PauseMenu" type="Control" unique_id=1910183957]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8sti")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=473743623]
+material = SubResource("ShaderMaterial_a32ks")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=507045384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 690.0
+offset_top = 80.0
+offset_right = -630.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="TextureButton" parent="PanelContainer" unique_id=1258542985]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_d3xb4")
+texture_pressed = ExtResource("2_mxa3g")
+
+[node name="Options" type="TextureButton" parent="PanelContainer" unique_id=462828070]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("3_e8sti")
+texture_pressed = ExtResource("4_q2yj1")
+
+[node name="Menu" type="TextureButton" parent="PanelContainer" unique_id=471238655]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 12
+texture_normal = ExtResource("5_a32ks")
+texture_pressed = ExtResource("6_g7dbl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=526403822]
+libraries/ = SubResource("AnimationLibrary_ub45p")
