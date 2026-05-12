@@ -144,14 +144,17 @@ shape = SubResource("WorldBoundaryShape2D_hbq8b")
 [node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=803770113]
 shape = SubResource("WorldBoundaryShape2D_x84p7")
 
-[node name="Fade_transition" parent="." unique_id=1611118378 instance=ExtResource("14_lribv")]
-visible = false
-offset_left = -1.0000001
-offset_right = 1945.0
-
 [node name="Door" parent="." unique_id=173359987 instance=ExtResource("15_ojxkg")]
 position = Vector2(1054.0001, 797)
 scale = Vector2(0.7, 0.7)
 
 [node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("16_8p8ty")]
 position = Vector2(168.00012, 866)
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=373077479]
+layer = 100
+
+[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_lribv")]
+visible = false
+offset_left = -1.0000001
+offset_right = 1945.0

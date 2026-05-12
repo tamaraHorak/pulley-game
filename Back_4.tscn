@@ -145,11 +145,6 @@ shape = SubResource("WorldBoundaryShape2D_hbq8b")
 [node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=803770113]
 shape = SubResource("WorldBoundaryShape2D_x84p7")
 
-[node name="Fade_transition" parent="." unique_id=1611118378 instance=ExtResource("14_kngxs")]
-visible = false
-offset_left = -1.0000001
-offset_right = 1945.0
-
 [node name="Door" parent="." unique_id=173359987 instance=ExtResource("15_e1x8d")]
 position = Vector2(1055, 562)
 scale = Vector2(0.7, 0.7)
@@ -163,3 +158,11 @@ position = Vector2(36, 534)
 [node name="Pendulum" parent="." unique_id=1197021097 instance=ExtResource("17_is2wa")]
 position = Vector2(712, 825)
 scale = Vector2(0.5, 0.5)
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1467499113]
+layer = 100
+
+[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_kngxs")]
+visible = false
+offset_left = -1.0000001
+offset_right = 1945.0
