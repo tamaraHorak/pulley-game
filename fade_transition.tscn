@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwcctwagelhrk"]
 
 [sub_resource type="Animation" id="Animation_aud3v"]
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

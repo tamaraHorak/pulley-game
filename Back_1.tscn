@@ -161,7 +161,6 @@ layer = 50
 
 [node name="Fade" type="CanvasLayer" parent="." unique_id=1349380997]
 layer = 100
-visible = false
 
 [node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("15_bl4lt")]
 offset_left = -1.0000001
