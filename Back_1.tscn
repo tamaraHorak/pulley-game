@@ -14,9 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ss1wlcco075" path="res://Tileset/1 Tiles/Tile_10.png" id="11_6xu6y"]
 [ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="12_6k25e"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="13_lau5l"]
-[ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="15_bl4lt"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="16_bl4lt"]
-[ext_resource type="PackedScene" uid="uid://prwkuuwjfk2k" path="res://pause_menu.tscn" id="16_n0dn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_lau5l")
@@ -151,14 +149,3 @@ shape = SubResource("WorldBoundaryShape2D_x84p7")
 position = Vector2(1039, 964.00006)
 scale = Vector2(0.7, 0.7)
 next = "res://Back_2.tscn"
-
-[node name="Pause" type="CanvasLayer" parent="." unique_id=1229077034]
-
-[node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_n0dn3")]
-
-[node name="Fade" type="CanvasLayer" parent="." unique_id=496048316]
-layer = 100
-
-[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("15_bl4lt")]
-offset_left = -1.0000001
-offset_right = 1945.0

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cwcctwagelhrk"]
+[gd_scene format=3 uid="uid://7ib1ej5ag7re"]
+
+[ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="1_bg7ga"]
 
 [sub_resource type="Animation" id="Animation_aud3v"]
 length = 0.5
@@ -45,17 +47,17 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5j0pd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bg7ga"]
 _data = {
 &"RESET": SubResource("Animation_aud3v"),
 &"fade_in": SubResource("Animation_5ggkw"),
 &"fade_out": SubResource("Animation_vp514")
 }
 
-[node name="Fade_transition" type="ColorRect" unique_id=1611118378]
-offset_right = 1946.0
-offset_bottom = 1096.0
-color = Color(0, 0, 0, 1)
+[node name="Fade" type="CanvasLayer" unique_id=943763686]
+layer = 100
 
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=2100884557]
-libraries/ = SubResource("AnimationLibrary_5j0pd")
+[node name="Fade_transition" parent="." unique_id=1611118378 instance=ExtResource("1_bg7ga")]
+
+[node name="Anim" type="AnimationPlayer" parent="Fade_transition" unique_id=336666685]
+libraries/ = SubResource("AnimationLibrary_bg7ga")

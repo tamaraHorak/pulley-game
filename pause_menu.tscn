@@ -8,137 +8,182 @@
 [ext_resource type="Texture2D" uid="uid://dkqyl4i63dek" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Options  col_Button.png" id="4_q2yj1"]
 [ext_resource type="Texture2D" uid="uid://e4nrsxxj1f6m" path="res://Menu Buttons/Large Buttons/Large Buttons/Menu Button.png" id="5_a32ks"]
 [ext_resource type="Texture2D" uid="uid://d0twnvg4tm1li" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Menu  col_Button.png" id="6_g7dbl"]
-[ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="9_q2yj1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a32ks"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8sti"]
 shader = ExtResource("2_q2yj1")
-shader_parameter/lod = 5.0
+shader_parameter/blur_strength = 0.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8sti"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8sti"]
+
+[sub_resource type="Animation" id="Animation_q2yj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlurControl/BlurRect:material:shader_parameter/blur_strength")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a32ks"]
+resource_name = "pause_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlurControl/BlurRect:material:shader_parameter/blur_strength")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5000000712500001]
+}
 
 [sub_resource type="Animation" id="Animation_g7dbl"]
+resource_name = "pause_out"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/path = NodePath("CenterContainer/PanelContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [5.0, 1.0000000475]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.26666668),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_lv42l"]
-resource_name = "blur"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0000000475]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/path = NodePath("BlurControl/BlurRect:material:shader_parameter/blur_strength")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [1.5000000712500001, 0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ub45p"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lv42l"]
 _data = {
-&"RESET": SubResource("Animation_g7dbl"),
-&"blur": SubResource("Animation_lv42l")
+&"RESET": SubResource("Animation_q2yj1"),
+&"pause_in": SubResource("Animation_a32ks"),
+&"pause_out": SubResource("Animation_g7dbl")
 }
 
-[node name="PauseMenu" type="Control" unique_id=1910183957]
+[node name="Pause" type="CanvasLayer" unique_id=1220021814]
 process_mode = 3
+layer = 50
+script = ExtResource("1_e8sti")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=1910183957]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e8sti")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=473743623]
-material = SubResource("ShaderMaterial_a32ks")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=507045384]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 690.0
-offset_top = 80.0
-offset_right = -630.0
-offset_bottom = -80.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_e8sti")
-
-[node name="Resume" type="TextureButton" parent="PanelContainer" unique_id=1258542985]
-layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="BlurControl" type="Control" parent="PauseMenu" unique_id=1140266214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlurRect" type="ColorRect" parent="PauseMenu/BlurControl" unique_id=1031096618]
+material = SubResource("ShaderMaterial_e8sti")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu" unique_id=243908753]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/CenterContainer" unique_id=2006720377]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_e8sti")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/CenterContainer/PanelContainer" unique_id=1718869365]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer" unique_id=2145510392]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Resume" type="TextureButton" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2031005216]
+process_mode = 3
+layout_mode = 2
 texture_normal = ExtResource("1_d3xb4")
 texture_pressed = ExtResource("2_mxa3g")
 
-[node name="Options" type="TextureButton" parent="PanelContainer" unique_id=462828070]
+[node name="Options" type="TextureButton" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=687727469]
+process_mode = 3
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
 texture_normal = ExtResource("3_e8sti")
 texture_pressed = ExtResource("4_q2yj1")
 
-[node name="Menu" type="TextureButton" parent="PanelContainer" unique_id=471238655]
+[node name="Menu" type="TextureButton" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1704753812]
+process_mode = 3
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 12
 texture_normal = ExtResource("5_a32ks")
 texture_pressed = ExtResource("6_g7dbl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=526403822]
-libraries/ = SubResource("AnimationLibrary_ub45p")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=130811490]
+process_mode = 3
+root_node = NodePath("../PauseMenu")
+libraries/ = SubResource("AnimationLibrary_lv42l")
 
-[node name="Fade" type="CanvasLayer" parent="." unique_id=1008763997]
-layer = 100
-
-[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("9_q2yj1")]
-
-[connection signal="pressed" from="PanelContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="PanelContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

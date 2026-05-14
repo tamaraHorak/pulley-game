@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bftn3umej2pjo"]
 
 [ext_resource type="Script" uid="uid://ne6lau026dlt" path="res://main_menu.gd" id="1_06t4h"]
-[ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="2_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://76xbe6agq1xr" path="res://Menu Buttons/Large Buttons/Large Buttons/Start Button.png" id="2_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://drwhxrgmbj33k" path="res://Tileset/2 Background/Night/1.png" id="2_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://hjiicnm6op5n" path="res://Tileset/2 Background/Night/2.png" id="3_0k4wn"]
@@ -35,7 +34,6 @@ sources/0 = SubResource("TileSetAtlasSource_iotk1")
 sources/1 = SubResource("TileSetAtlasSource_w44g7")
 
 [node name="Main Menu" type="Node2D" unique_id=406244280]
-process_mode = 3
 script = ExtResource("1_06t4h")
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1104021785]
@@ -91,13 +89,6 @@ grow_vertical = 2
 texture_normal = ExtResource("9_w44g7")
 texture_pressed = ExtResource("10_cm266")
 
-[node name="Fade" type="CanvasLayer" parent="." unique_id=230908876]
-
-[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("2_7vrkn")]
-
-[node name="fade_timer" type="Timer" parent="Fade/Fade_transition" unique_id=787070193]
-
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
-[connection signal="timeout" from="Fade/Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

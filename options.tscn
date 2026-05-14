@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cb8vhdk1oexwj"]
 
 [ext_resource type="Script" uid="uid://c5u2i3md6q6vc" path="res://options.gd" id="1_se8ut"]
-[ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="2_ao2gm"]
 [ext_resource type="Script" uid="uid://dlk8pbjsvmt4u" path="res://control.gd" id="3_ao2gm"]
 [ext_resource type="Texture2D" uid="uid://doifag2fapmnq" path="res://Menu Buttons/Large Buttons/Large Buttons/Back Button.png" id="3_p8250"]
 [ext_resource type="Texture2D" uid="uid://cqik5xh27ray1" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Back  col_Button.png" id="4_kls10"]
@@ -67,12 +66,4 @@ text = "Area currently under development "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fade" type="CanvasLayer" parent="." unique_id=451480148]
-layer = 100
-
-[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("2_ao2gm")]
-
-[node name="fade_timer" type="Timer" parent="Fade/Fade_transition" unique_id=1371536466]
-
 [connection signal="pressed" from="Control/Button control/Back to Main" to="." method="_on_back_to_main_pressed"]
-[connection signal="timeout" from="Fade/Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

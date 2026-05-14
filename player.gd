@@ -92,7 +92,7 @@ func pick_up_sac():
 	print("pick")
 	has_sac = true
 
-func _process(delta):
+func _process(_delta):
 	if has_sac and Input.is_action_just_pressed("ui_accept"):
 		drop_sac()
 		

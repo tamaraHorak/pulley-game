@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bx2e2xiplhqoa"]
 
+[ext_resource type="Script" uid="uid://c1r32l0hklirl" path="res://back_2.gd" id="1_27lnn"]
 [ext_resource type="Texture2D" uid="uid://cpg1seojwhhei" path="res://Tileset/2 Background/Day/1.png" id="2_275x0"]
 [ext_resource type="Texture2D" uid="uid://d3d1ob1vtnpgm" path="res://Tileset/2 Background/Day/2.png" id="3_6q501"]
 [ext_resource type="Texture2D" uid="uid://djnwpfaqsebeu" path="res://Tileset/1 Tiles/Tile_12.png" id="4_2hr53"]
@@ -12,9 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ss1wlcco075" path="res://Tileset/1 Tiles/Tile_10.png" id="11_37h0y"]
 [ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="12_xc8gb"]
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="13_3iym5"]
-[ext_resource type="PackedScene" uid="uid://cwcctwagelhrk" path="res://fade_transition.tscn" id="14_3mtyq"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="15_hev5k"]
-[ext_resource type="PackedScene" uid="uid://prwkuuwjfk2k" path="res://pause_menu.tscn" id="16_275x0"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="16_dfkqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
@@ -105,6 +104,7 @@ normal = Vector2(-1, 0)
 distance = -1921.0
 
 [node name="Node2D" type="Node2D" unique_id=777943668]
+script = ExtResource("1_27lnn")
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1534277841]
 use_parent_material = true
@@ -159,14 +159,3 @@ position = Vector2(1318, 885)
 scale = Vector2(0.5, 0.5)
 speed = 300
 distance = 300
-
-[node name="Pause" type="CanvasLayer" parent="." unique_id=803553341]
-
-[node name="PauseMenu" parent="Pause" unique_id=1910183957 instance=ExtResource("16_275x0")]
-
-[node name="Fade" type="CanvasLayer" parent="." unique_id=1803311163]
-layer = 100
-
-[node name="Fade_transition" parent="Fade" unique_id=1611118378 instance=ExtResource("14_3mtyq")]
-offset_left = -1.0000001
-offset_right = 1945.0
