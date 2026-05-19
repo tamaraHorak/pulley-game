@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dkqyl4i63dek" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Options  col_Button.png" id="8_iotk1"]
 [ext_resource type="Texture2D" uid="uid://dt465sfynvlks" path="res://Menu Buttons/Large Buttons/Large Buttons/Quit Button.png" id="9_w44g7"]
 [ext_resource type="Texture2D" uid="uid://bpkcex8ycmc8b" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Quit  col_Button.png" id="10_cm266"]
+[ext_resource type="Texture2D" uid="uid://hve2g33swgkx" path="res://art/Logo.png" id="11_0k4wn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o4t1"]
 texture = ExtResource("2_dy7ct")
@@ -33,7 +34,15 @@ texture = ExtResource("4_j5v2v")
 sources/0 = SubResource("TileSetAtlasSource_iotk1")
 sources/1 = SubResource("TileSetAtlasSource_w44g7")
 
-[node name="Main Menu" type="Node2D" unique_id=406244280]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4wn"]
+
+[node name="Main Menu" type="Control" unique_id=505925719]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_06t4h")
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1104021785]
@@ -46,49 +55,52 @@ scale = Vector2(3.3999999, 3.5200002)
 tile_map_data = PackedByteArray(0, 0, 17, 0, 10, 0, 0, 0, 0, 0, 2, 0, 0, 0, 17, 0, 12, 0, 1, 0, 0, 0, 5, 0, 0, 0)
 tile_set = SubResource("TileSet_cm266")
 
-[node name="Button_manager" type="Control" parent="." unique_id=1947063762]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1288488714]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Start" type="TextureButton" parent="Button_manager" unique_id=1146270600]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 24.0
-anchor_top = 7.0
-anchor_right = 24.0
-anchor_bottom = 7.0
-grow_horizontal = 2
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+grow_horizontal = 0
 grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=164402431]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0k4wn")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=46567007]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_right = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=710958986]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Start" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1146270600]
+layout_mode = 2
 texture_normal = ExtResource("2_8qtwp")
 texture_pressed = ExtResource("6_0k4wn")
 
-[node name="Options" type="TextureButton" parent="Button_manager" unique_id=2068387198]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 24.0
-anchor_top = 14.0
-anchor_right = 24.0
-anchor_bottom = 14.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Options" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2068387198]
+layout_mode = 2
 texture_normal = ExtResource("7_j5v2v")
 texture_pressed = ExtResource("8_iotk1")
 
-[node name="Quit" type="TextureButton" parent="Button_manager" unique_id=1590017842]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 24.0
-anchor_top = 21.0
-anchor_right = 24.0
-anchor_bottom = 21.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Quit" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1590017842]
+layout_mode = 2
 texture_normal = ExtResource("9_w44g7")
 texture_pressed = ExtResource("10_cm266")
 
-[connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=756196118]
+layout_mode = 1
+offset_right = 1062.0
+offset_bottom = 1080.0
+texture = ExtResource("11_0k4wn")
+stretch_mode = 5
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
