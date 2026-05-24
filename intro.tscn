@@ -35,7 +35,7 @@ dialogue = [{
 "text": "D'accord, je m'en occupe ! Mais comment je vais traverser tout ça ?"
 }, {
 "speaker": "Paolo Ricci",
-"text": "Le chemin est semé d'obstacles : vides, plateformes bougantes, pendules..."
+"text": "Le chemin est semé d'obstacles: vides, plateformes bougantes, pendules..."
 }, {
 "speaker": "Paolo Ricci",
 "text": "Heureusement tu as suivi le cours de Mécanique I à l'EPFL !"
@@ -60,6 +60,12 @@ dialogue = [{
 }, {
 "speaker": "Paolo Ricci",
 "text": "Attention ! Avec un sac, tu es plus lent et tu sautes moins haut."
+}, {
+"speaker": "Paolo Ricci",
+"text": "Si tu veux faire une pause, appuie sur ÉCHAP (esc) pour ouvrir le menu pause."
+}, {
+"speaker": "Paolo Ricci",
+"text": "Et si tu veux recommencer le niveau depuis le début, appuie sur R."
 }, {
 "speaker": "Paolo Ricci",
 "text": "Ton objectif à chaque niveau: atteindre la PORTE à la fin."
