@@ -3,11 +3,18 @@
 [ext_resource type="Script" uid="uid://bkm88u86ek33d" path="res://player.gd" id="1_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://dp8lw7jjebiht" path="res://art/player/crouching_2.png" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bo55u3oo4wgoj" path="res://art/player/Jumping.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://b4sx4tft2dh6m" path="res://art/player/Crouch sac.png" id="3_606se"]
 [ext_resource type="Texture2D" uid="uid://bv176wapey7gc" path="res://art/player/Crouch walking 1.png" id="3_dw050"]
 [ext_resource type="Texture2D" uid="uid://nvfdxl0tmo5q" path="res://art/player/Standing.png" id="4_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://bfu0f25qg1vck" path="res://art/player/Crouch walking 2.png" id="4_b26j0"]
 [ext_resource type="Texture2D" uid="uid://cqjbmpvqr66kf" path="res://art/player/Walking 1.png" id="5_b26j0"]
 [ext_resource type="Texture2D" uid="uid://ccfhmm6au3xge" path="res://art/player/Walking 2.png" id="6_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://darov2hsjj4my" path="res://art/player/Crouch walking sac 1 .png" id="6_u1c27"]
+[ext_resource type="Texture2D" uid="uid://cbef8oekud1am" path="res://art/player/Crouch walking sac 2.png" id="7_op7ga"]
+[ext_resource type="Texture2D" uid="uid://bgucwwts2h3mo" path="res://art/player/Jumping sac.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://ctxwd8owc75a6" path="res://art/player/Standing sac.png" id="11_pylmc"]
+[ext_resource type="Texture2D" uid="uid://bmayw2bhkorc6" path="res://art/player/Walking sac 1 .png" id="14_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://cmsksoc63wb1g" path="res://art/player/Walking sac 2.png" id="15_5tmop"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvl01"]
 animations = [{
@@ -17,6 +24,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"crouching",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_606se")
+}],
+"loop": true,
+"name": &"crouching_sac",
 "speed": 5.0
 }, {
 "frames": [{
@@ -32,10 +47,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_op7ga")
+}],
+"loop": true,
+"name": &"crouching_walk_sac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_1jxqw")
 }],
 "loop": true,
 "name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_q13i1")
+}],
+"loop": true,
+"name": &"jumping_sac",
 "speed": 5.0
 }, {
 "frames": [{
@@ -48,6 +82,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_pylmc")
+}],
+"loop": true,
+"name": &"standing_sac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_b26j0")
 }, {
 "duration": 1.0,
@@ -55,6 +97,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5tmop")
+}],
+"loop": true,
+"name": &"walking_sac",
 "speed": 5.0
 }]
 
@@ -64,6 +117,22 @@ size = Vector2(105, 188)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(120, 143)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw050"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 15.0
+expand_margin_right = 20.0
+expand_margin_bottom = 15.0
+
 [node name="Player" type="CharacterBody2D" unique_id=305184656]
 position = Vector2(568, 334)
 script = ExtResource("1_2hs0m")
@@ -72,8 +141,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20790947]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"crouching_walk"
-frame_progress = 0.58488846
+animation = &"standing"
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=1536365626]
 position = Vector2(0, -4)
@@ -87,3 +155,75 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=798736967]
 enabled = false
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1424756593]
+
+[node name="DialoguePanel" type="Panel" parent="DialogueUI" unique_id=1628058685]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 210.0
+offset_top = -280.0
+offset_right = -210.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw050")
+
+[node name="SpeakerLabel" type="Label" parent="DialogueUI/DialoguePanel" unique_id=179161318]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.08400001
+anchor_right = 0.102000006
+anchor_bottom = 0.47100002
+offset_left = -0.59300244
+offset_top = -9.020017
+offset_right = 0.5139923
+offset_bottom = -0.0050201416
+theme_override_colors/font_color = Color(0.11764706, 0, 0.6627451, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="DialogueLabel" type="Label" parent="DialogueUI/DialoguePanel" unique_id=1133355792]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.374
+anchor_right = 0.994
+anchor_bottom = 0.97400004
+offset_left = 0.40699995
+offset_top = 0.02999878
+offset_right = 0.5579834
+offset_bottom = 0.02999878
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+
+[node name="HintLabEnterel" type="Label" parent="DialogueUI/DialoguePanel" unique_id=2095620072]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 128.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.2538426, 0.2538428, 0.25384268, 1)
+theme_override_font_sizes/font_size = 20
+text = "▶ ESPACE : Suivant"
+
+[node name="HintLabelSkip" type="Label" parent="DialogueUI/DialoguePanel" unique_id=1380069741]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.25490198, 0.25490198, 0.25490198, 1)
+theme_override_font_sizes/font_size = 20
+text = "⏭ TAB : Passer"

@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="12_6k25e"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="13_lau5l"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="16_bl4lt"]
+[ext_resource type="PackedScene" uid="uid://fe47isyatfqm" path="res://npc_instructor.tscn" id="16_n0dn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_lau5l")
@@ -149,3 +150,23 @@ shape = SubResource("WorldBoundaryShape2D_x84p7")
 position = Vector2(1039, 964.00006)
 scale = Vector2(0.7, 0.7)
 next = "res://Back_2.tscn"
+
+[node name="npc_instructor" parent="." unique_id=2063979621 instance=ExtResource("16_n0dn3")]
+position = Vector2(41, 839)
+scale = Vector2(0.25, 0.25)
+dialogue = [{
+"speaker": "Moi",
+"text": "Cette plateforme oscillante ne peut pas être là pour rien…"
+}, {
+"speaker": "Paolo Ricci",
+"text": "En effet, pour pouvoir traverser ce gouffre, tu vas devoir t’aider de son mouvement de pendule!"
+}, {
+"speaker": "Moi",
+"text": "Hein?"
+}, {
+"speaker": "Paolo Ricci",
+"text": "En appliquant le principe de conservation des vitesses, tu peux utiliser la vitesse verticale de la plateforme pour sauter encore plus haut!"
+}, {
+"speaker": "Me",
+"text": "Hum… on va tester ça…"
+}]

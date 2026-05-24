@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 @export var speed = 350 # How fast the player will move (pixels/sec)
 @export var jump_force = -450
 var screen_size # Size of the game window.
@@ -7,7 +6,7 @@ var is_crouching = false
 var platform_velocity := Vector2.ZERO
 var has_sac = false
 var sac_scene = preload("res://sac.tscn")
-
+var current_npc = null
 const GRAVITY = 1200
 
 # Called when the node enters the scene tree for the first time.
@@ -15,12 +14,15 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	$CollisionStanding.disabled = false
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	var current_speed = float(speed) / 2.0 if has_sac else float(speed)
 	var current_jump = jump_force * 0.9 if has_sac else float(jump_force)
 	var current_gravity = GRAVITY * 1.5 if has_sac else float(GRAVITY)
+	
+	# Suffixe pour les animations selon si le joueur porte le sac
+	var anim_suffix = "_sac" if has_sac else ""
+	
 	# Gravity
 	if is_on_floor():
 		velocity.y = 0
@@ -39,21 +41,20 @@ func _physics_process(_delta):
 		is_crouching = true
 	if Input.is_action_just_released("crouch"):
 		is_crouching = false
-
 	if is_crouching:
 		$CollisionCrouching.disabled = false
 		$CollisionStanding.disabled = true
 		if Input.is_action_pressed("move_right"):
 			velocity.x = current_speed / 2.0  # slower while crouching
 			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("crouching_walk")
+			$AnimatedSprite2D.play("crouching_walk" + anim_suffix)
 		elif Input.is_action_pressed("move_left"):
 			velocity.x = -current_speed / 2.0
 			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("crouching_walk")
+			$AnimatedSprite2D.play("crouching_walk" + anim_suffix)
 		else:
 			velocity.x = 0
-			$AnimatedSprite2D.play("crouching")
+			$AnimatedSprite2D.play("crouching" + anim_suffix)
 	else:
 		# Movement
 		if Input.is_action_pressed("move_right"):
@@ -64,8 +65,6 @@ func _physics_process(_delta):
 			velocity.x = 0
 		if not is_on_floor():
 			velocity.x += platform_velocity.x
-
-
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = current_jump
 		# Flip sprite
@@ -74,11 +73,11 @@ func _physics_process(_delta):
 		
 		# Animations
 		if not is_on_floor():
-			$AnimatedSprite2D.play("jumping")
+			$AnimatedSprite2D.play("jumping" + anim_suffix)
 		elif velocity.x != 0:
-			$AnimatedSprite2D.play("walking")
+			$AnimatedSprite2D.play("walking" + anim_suffix)
 		else:
-			$AnimatedSprite2D.play("standing")
+			$AnimatedSprite2D.play("standing" + anim_suffix)
 	print(platform_velocity)
 	
 	if position.y > 1000:
@@ -93,7 +92,7 @@ func pick_up_sac():
 	has_sac = true
 
 func _process(_delta):
-	if has_sac and Input.is_action_just_pressed("ui_accept"):
+	if has_sac and Input.is_action_just_pressed("pick_drop"):
 		drop_sac()
 		
 	if Input.is_action_just_pressed("restart"):
@@ -101,9 +100,26 @@ func _process(_delta):
 		await get_tree().create_timer(0.5).timeout
 		get_tree().reload_current_scene()
 		
+	if Input.is_action_just_pressed("interact") and current_npc != null:
+		current_npc.advance_dialogue()
+	
+	# Skip le dialogue pendant les niveaux
+	if current_npc != null and Input.is_action_just_pressed("skip"):
+		current_npc.dialogue_index = current_npc.dialogue.size()
+		hide_dialogue()
+		current_npc = null
+		
 func drop_sac():
 	has_sac = false
 	var sac = sac_scene.instantiate()
 	sac.position = position
 	get_parent().add_child(sac)
 	print("drop")
+
+func show_dialogue(line):
+	$DialogueUI/DialoguePanel.visible = true
+	$DialogueUI/DialoguePanel/SpeakerLabel.text = line["speaker"]
+	$DialogueUI/DialoguePanel/DialogueLabel.text = line["text"]
+
+func hide_dialogue():
+	$DialogueUI/DialoguePanel.visible = false

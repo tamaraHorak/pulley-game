@@ -24,6 +24,6 @@ func _on_body_exited(body):
 		player_ref = null
 
 func _process(_delta):
-	if player_nearby and Input.is_action_just_pressed("ui_accept"):
+	if player_nearby and Input.is_action_just_pressed("pick_drop"):
 		player_ref.pick_up_sac()
 		queue_free()

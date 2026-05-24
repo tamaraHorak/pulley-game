@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="15_e1x8d"]
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="16_pbffy"]
 [ext_resource type="PackedScene" uid="uid://bcnmiwpsasiem" path="res://pendulum.tscn" id="17_is2wa"]
+[ext_resource type="PackedScene" uid="uid://fe47isyatfqm" path="res://npc_instructor.tscn" id="18_30ocd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_30ocd")
@@ -137,7 +138,7 @@ tile_map_data = PackedByteArray("AAAhABgACAAAAAAAAAAhABkACAAAAAAAAAAhABsACAAAAAA
 tile_set = SubResource("TileSet_tqlyp")
 
 [node name="Player" parent="." unique_id=305184656 instance=ExtResource("13_w73k1")]
-position = Vector2(265, 526)
+position = Vector2(326, 606)
 scale = Vector2(0.5, 0.574)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1111759443]
@@ -158,11 +159,15 @@ scale = Vector2(0.7, 0.7)
 next = "res://main_menu.tscn"
 
 [node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("16_pbffy")]
-position = Vector2(120, 535)
+position = Vector2(226, 618)
 
 [node name="Character2D2" parent="." unique_id=231946613 instance=ExtResource("16_pbffy")]
-position = Vector2(36, 534)
+position = Vector2(133, 619)
 
 [node name="Pendulum" parent="." unique_id=1197021097 instance=ExtResource("17_is2wa")]
 position = Vector2(712, 825)
 scale = Vector2(0.5, 0.5)
+
+[node name="npc_instructor" parent="." unique_id=2063979621 instance=ExtResource("18_30ocd")]
+position = Vector2(41, 601)
+scale = Vector2(0.25, 0.25)

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="13_3iym5"]
 [ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="15_hev5k"]
 [ext_resource type="PackedScene" uid="uid://cxau2xpyrkoq0" path="res://moving_platform.tscn" id="16_dfkqx"]
+[ext_resource type="PackedScene" uid="uid://fe47isyatfqm" path="res://npc_instructor.tscn" id="16_k8tuo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
 texture = ExtResource("2_275x0")
@@ -159,3 +160,7 @@ position = Vector2(1318, 885)
 scale = Vector2(0.5, 0.5)
 speed = 300
 distance = 300
+
+[node name="npc_instructor" parent="." unique_id=2063979621 instance=ExtResource("16_k8tuo")]
+position = Vector2(41, 837)
+scale = Vector2(0.25, 0.25)

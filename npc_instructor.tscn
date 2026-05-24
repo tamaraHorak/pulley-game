@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://fe47isyatfqm"]
+
+[ext_resource type="Script" uid="uid://nqjodw26fgxf" path="res://static_body_2d.gd" id="1_k1iwm"]
+[ext_resource type="Texture2D" uid="uid://b0nk86gicq0u7" path="res://art/Chauve .png" id="2_o7v4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hei4k"]
+size = Vector2(223, 404)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nfo3"]
+size = Vector2(1934.9998, 2244.9998)
+
+[node name="npc_instructor" type="StaticBody2D" unique_id=2063979621]
+script = ExtResource("1_k1iwm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=985829949]
+texture = ExtResource("2_o7v4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=201101067]
+position = Vector2(-7.5, 23)
+shape = SubResource("RectangleShape2D_hei4k")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=148424496]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1216300599]
+position = Vector2(-2.4999893, 0.5)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_1nfo3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1449526675]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
