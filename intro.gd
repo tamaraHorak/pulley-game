@@ -11,6 +11,8 @@ func _ready():
 	$Player.current_npc = npc
 	$Player.show_dialogue(npc.dialogue[0])
 	npc.dialogue_index = 0
+	await get_tree().process_frame  
+	await UIManager.fade_in()
 
 func _process(_delta):
 	# Skip tout le dialogue avec TAB
