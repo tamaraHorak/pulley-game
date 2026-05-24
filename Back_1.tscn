@@ -155,18 +155,18 @@ next = "res://Back_2.tscn"
 position = Vector2(41, 839)
 scale = Vector2(0.25, 0.25)
 dialogue = [{
-"speaker": "Moi",
+"speaker": "Piccolo",
 "text": "Cette plateforme oscillante ne peut pas être là pour rien…"
 }, {
 "speaker": "Paolo Ricci",
 "text": "En effet, pour pouvoir traverser ce gouffre, tu vas devoir t’aider de son mouvement de pendule!"
 }, {
-"speaker": "Moi",
+"speaker": "Piccolo",
 "text": "Hein?"
 }, {
 "speaker": "Paolo Ricci",
 "text": "En appliquant le principe de conservation des vitesses, tu peux utiliser la vitesse verticale de la plateforme pour sauter encore plus haut!"
 }, {
-"speaker": "Me",
+"speaker": "Piccolo",
 "text": "Hum… on va tester ça…"
 }]
