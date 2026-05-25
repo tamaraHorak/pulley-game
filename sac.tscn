@@ -10,7 +10,7 @@ height = 253.33334
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdh84"]
 size = Vector2(279.99997, 356.66666)
 
-[node name="Character2D" type="CharacterBody2D" unique_id=327463806]
+[node name="Character2D" type="CharacterBody2D" unique_id=327463806 groups=["sac"]]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_bwm47")
 

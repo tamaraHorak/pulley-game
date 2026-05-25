@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="2_3nsov"]
 [ext_resource type="PackedScene" uid="uid://cn0lpadouyivt" path="res://sac.tscn" id="3_bgs24"]
 [ext_resource type="Texture2D" uid="uid://taru52ker1yc" path="res://art/Porte.png" id="4_bgs24"]
-[ext_resource type="Script" path="res://door.gd" id="4_gyhs8"]
+[ext_resource type="Script" uid="uid://bui8tn3xgmoud" path="res://door.gd" id="4_gyhs8"]
+[ext_resource type="Script" uid="uid://p5mpr0pnl7at" path="res://pulley_mechanism.gd" id="6_8ja2b"]
+[ext_resource type="Texture2D" uid="uid://cdsauwe4jsb66" path="res://art/Plank.png" id="6_dbgd6"]
+[ext_resource type="Texture2D" uid="uid://dyaloxlgo83ya" path="res://art/Poulie sans background.png" id="8_kjj2m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hbghi"]
 
@@ -24,6 +27,15 @@ sources/5 = SubResource("TileSetAtlasSource_v5qxt")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyhs8"]
 size = Vector2(181, 197)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbgd6"]
+size = Vector2(297, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjj2m"]
+size = Vector2(280, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ja2b"]
+size = Vector2(76, 211)
+
 [node name="firstlevel" type="Node2D" unique_id=1175467524]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=452010119]
@@ -31,7 +43,7 @@ rotation = 0.00048953295
 tile_map_data = PackedByteArray("AAABAAAABQAAAAAAAAACAAAABQAAAAAAAAADAAAABQAAAAAAAAAEAAAABQAAAAAAAAD9/wAABQAAAAAAAAD+/wAABQAAAAAAAAD//wAABQAAAAAAAAA=")
 tile_set = SubResource("TileSet_3nsov")
 
-[node name="Player" parent="." unique_id=305184656 instance=ExtResource("2_3nsov")]
+[node name="Player" parent="." unique_id=305184656 groups=["sac"] instance=ExtResource("2_3nsov")]
 position = Vector2(-642, -94)
 
 [node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("3_bgs24")]
@@ -52,3 +64,56 @@ shape = SubResource("RectangleShape2D_gyhs8")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1851059929]
 position = Vector2(303, -49)
 zoom = Vector2(0.7, 0.7)
+
+[node name="PulleyMechanism" type="Node2D" parent="." unique_id=373245227]
+script = ExtResource("6_8ja2b")
+
+[node name="HorizontalPlank" type="AnimatableBody2D" parent="PulleyMechanism" unique_id=1765688374]
+
+[node name="Sprite2D" type="Sprite2D" parent="PulleyMechanism/HorizontalPlank" unique_id=1534933636]
+position = Vector2(168.00002, 26)
+rotation = 1.5707964
+scale = Vector2(0.6243576, 0.6519964)
+texture = ExtResource("6_dbgd6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PulleyMechanism/HorizontalPlank" unique_id=866210262]
+position = Vector2(160, 35)
+shape = SubResource("RectangleShape2D_dbgd6")
+
+[node name="WeightDetector" type="Area2D" parent="PulleyMechanism/HorizontalPlank" unique_id=1991972077]
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PulleyMechanism/HorizontalPlank/WeightDetector" unique_id=1317515490]
+position = Vector2(163, 27)
+shape = SubResource("RectangleShape2D_kjj2m")
+
+[node name="PlankRopePoint" type="Marker2D" parent="PulleyMechanism/HorizontalPlank" unique_id=2087119401]
+position = Vector2(158, 39)
+
+[node name="PulleyLeft" type="Sprite2D" parent="PulleyMechanism" unique_id=1088105398]
+position = Vector2(176, -803)
+texture = ExtResource("8_kjj2m")
+
+[node name="LeftPulleyPoint" type="Marker2D" parent="PulleyMechanism/PulleyLeft" unique_id=938978661]
+position = Vector2(-8, 6)
+
+[node name="PulleyRight" type="Sprite2D" parent="PulleyMechanism" unique_id=1692954622]
+position = Vector2(1008, -808)
+texture = ExtResource("8_kjj2m")
+
+[node name="RightPulleyPoint" type="Marker2D" parent="PulleyMechanism/PulleyRight" unique_id=1230497063]
+
+[node name="GatePlank" type="AnimatableBody2D" parent="PulleyMechanism" unique_id=1846269989]
+position = Vector2(189, -456)
+
+[node name="Sprite2D" type="Sprite2D" parent="PulleyMechanism/GatePlank" unique_id=706279375]
+position = Vector2(820.99994, 347)
+scale = Vector2(0.57916665, 0.48333332)
+texture = ExtResource("6_dbgd6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PulleyMechanism/GatePlank" unique_id=695039925]
+position = Vector2(832, 348)
+shape = SubResource("RectangleShape2D_8ja2b")
+
+[node name="GateRopePoint" type="Marker2D" parent="PulleyMechanism/GatePlank" unique_id=1324868971]
+position = Vector2(827, 354)
