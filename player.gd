@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @export var speed = 350 # How fast the player will move (pixels/sec)
 @export var jump_force = -450
+@onready var jump_snd: AudioStreamPlayer = $Jump
+@onready var death_snd: AudioStreamPlayer = $Death
 var screen_size # Size of the game window.
 var is_crouching = false
 var platform_velocity := Vector2.ZERO
@@ -67,6 +69,7 @@ func _physics_process(_delta):
 			velocity.x += platform_velocity.x
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = current_jump
+			jump_snd.play()
 		# Flip sprite
 		if velocity.x != 0:
 			$AnimatedSprite2D.flip_h = velocity.x < 0
@@ -80,8 +83,9 @@ func _physics_process(_delta):
 			$AnimatedSprite2D.play("standing" + anim_suffix)
 	print(platform_velocity)
 	
-	if position.y > 1000:
+	if position.y > 1200:
 		set_physics_process(false)  # stop the player from moving
+		death_snd.play()
 		await get_tree().create_timer(0.5).timeout
 		get_tree().reload_current_scene()
 		

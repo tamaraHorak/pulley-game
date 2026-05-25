@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://v62uq7cwk7ye"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Script" uid="uid://bui8tn3xgmoud" path="res://door.gd" id="1_v6xrn"]
 [ext_resource type="Texture2D" uid="uid://taru52ker1yc" path="res://art/Porte.png" id="2_0phs7"]
+[ext_resource type="AudioStream" uid="uid://c7e57bcmt7u36" path="res://Sounds/door.mp3" id="3_0phs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyhs8"]
 size = Vector2(181, 197)
@@ -17,3 +18,7 @@ texture = ExtResource("2_0phs7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2022849007]
 position = Vector2(1183.5, -99.5)
 shape = SubResource("RectangleShape2D_gyhs8")
+
+[node name="Open" type="AudioStreamPlayer" parent="." unique_id=1704187303]
+process_mode = 3
+stream = ExtResource("3_0phs7")
