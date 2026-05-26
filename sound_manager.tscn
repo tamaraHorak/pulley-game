@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkaewup5lx3ci"]
+
+[node name="SoundManager" type="Node" unique_id=1905734791]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=881742229]
+autoplay = true
