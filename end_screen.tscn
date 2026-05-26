@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://bbqdsulki0p7l" path="res://end_screen.gd" id="1_kaxt3"]
 [ext_resource type="Texture2D" uid="uid://hjiicnm6op5n" path="res://Tileset/2 Background/Night/2.png" id="2_kaxt3"]
 [ext_resource type="Texture2D" uid="uid://piw6qoybob6s" path="res://Tileset/2 Background/Night/3.png" id="3_2afhe"]
-[ext_resource type="Texture2D" uid="uid://dt465sfynvlks" path="res://Menu Buttons/Large Buttons/Large Buttons/Quit Button.png" id="4_nbj2a"]
-[ext_resource type="Texture2D" uid="uid://bpkcex8ycmc8b" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Quit  col_Button.png" id="5_f33ud"]
+[ext_resource type="Texture2D" uid="uid://e4nrsxxj1f6m" path="res://Menu Buttons/Large Buttons/Large Buttons/Menu Button.png" id="5_kaxt3"]
 [ext_resource type="Texture2D" uid="uid://hve2g33swgkx" path="res://art/Logo.png" id="6_jpe70"]
+[ext_resource type="Texture2D" uid="uid://d0twnvg4tm1li" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Menu  col_Button.png" id="6_kaxt3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o4t1"]
 texture = ExtResource("1_be1gp")
@@ -80,8 +80,8 @@ theme_override_constants/separation = 80
 
 [node name="Menu" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1590017842]
 layout_mode = 2
-texture_normal = ExtResource("4_nbj2a")
-texture_pressed = ExtResource("5_f33ud")
+texture_normal = ExtResource("5_kaxt3")
+texture_pressed = ExtResource("6_kaxt3")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=756196118]
 layout_mode = 1
@@ -92,15 +92,15 @@ offset_bottom = 1051.0
 texture = ExtResource("6_jpe70")
 stretch_mode = 5
 
-[node name="CongratulationsLabel" type="Label" parent="." unique_id=2066605196]
+[node name="CongratulationsLabel" type="Label" parent="." unique_id=1969936808]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="TimeLabel" type="Label" parent="." unique_id=135012446]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 59.0
+offset_bottom = 37.0
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Menu" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
