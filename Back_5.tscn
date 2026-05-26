@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://i31a5voiujj7"]
 
 [ext_resource type="Texture2D" uid="uid://cpg1seojwhhei" path="res://Tileset/2 Background/Day/1.png" id="1_ofvht"]
-[ext_resource type="Script" uid="uid://bk4pm1h11tbyq" path="res://back_1.gd" id="1_snkkq"]
+[ext_resource type="Script" uid="uid://cvbj123r6sv7t" path="res://back_5.gd" id="1_oi4u1"]
 [ext_resource type="Texture2D" uid="uid://d3d1ob1vtnpgm" path="res://Tileset/2 Background/Day/2.png" id="2_eed5r"]
 [ext_resource type="Texture2D" uid="uid://coddhkru4gx3j" path="res://Tileset/2 Background/Day/3.png" id="3_027tf"]
 [ext_resource type="Texture2D" uid="uid://b2h1cw7jjkia0" path="res://Tileset/2 Background/Day/4.png" id="4_530h8"]
@@ -105,7 +105,7 @@ normal = Vector2(-1, 0)
 distance = -1920.0
 
 [node name="Node2D" type="Node2D" unique_id=777943668]
-script = ExtResource("1_snkkq")
+script = ExtResource("1_oi4u1")
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=1534277841]
 use_parent_material = true

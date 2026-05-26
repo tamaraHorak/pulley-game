@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cscglt5nf4k8n"]
+
+[ext_resource type="Texture2D" uid="uid://drwhxrgmbj33k" path="res://Tileset/2 Background/Night/1.png" id="1_be1gp"]
+[ext_resource type="Script" uid="uid://bbqdsulki0p7l" path="res://end_screen.gd" id="1_kaxt3"]
+[ext_resource type="Texture2D" uid="uid://hjiicnm6op5n" path="res://Tileset/2 Background/Night/2.png" id="2_kaxt3"]
+[ext_resource type="Texture2D" uid="uid://piw6qoybob6s" path="res://Tileset/2 Background/Night/3.png" id="3_2afhe"]
+[ext_resource type="Texture2D" uid="uid://dt465sfynvlks" path="res://Menu Buttons/Large Buttons/Large Buttons/Quit Button.png" id="4_nbj2a"]
+[ext_resource type="Texture2D" uid="uid://bpkcex8ycmc8b" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Quit  col_Button.png" id="5_f33ud"]
+[ext_resource type="Texture2D" uid="uid://hve2g33swgkx" path="res://art/Logo.png" id="6_jpe70"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o4t1"]
+texture = ExtResource("1_be1gp")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8qtwp"]
+sources/0 = SubResource("TileSetAtlasSource_0o4t1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotk1"]
+texture = ExtResource("2_kaxt3")
+0:2/size_in_atlas = Vector2i(36, 18)
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w44g7"]
+texture = ExtResource("3_2afhe")
+0:5/size_in_atlas = Vector2i(36, 15)
+0:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cm266"]
+sources/0 = SubResource("TileSetAtlasSource_iotk1")
+sources/1 = SubResource("TileSetAtlasSource_w44g7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4wn"]
+
+[node name="End screen" type="Control" unique_id=505925719]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kaxt3")
+
+[node name="Sky" type="TileMapLayer" parent="." unique_id=1104021785]
+scale = Vector2(3.3999999, 3.5200002)
+tile_map_data = PackedByteArray(0, 0, 17, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8qtwp")
+
+[node name="Buildings" type="TileMapLayer" parent="." unique_id=378355440]
+scale = Vector2(3.3999999, 3.5200002)
+tile_map_data = PackedByteArray(0, 0, 17, 0, 10, 0, 0, 0, 0, 0, 2, 0, 0, 0, 17, 0, 12, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+tile_set = SubResource("TileSet_cm266")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1288488714]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1129.0
+offset_top = 282.0
+offset_right = -289.0
+offset_bottom = 282.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=164402431]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0k4wn")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=46567007]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_right = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=710958986]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Menu" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1590017842]
+layout_mode = 2
+texture_normal = ExtResource("4_nbj2a")
+texture_pressed = ExtResource("5_f33ud")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=756196118]
+layout_mode = 1
+offset_left = -124.0
+offset_top = -29.0
+offset_right = 938.0
+offset_bottom = 1051.0
+texture = ExtResource("6_jpe70")
+stretch_mode = 5
+
+[node name="CongratulationsLabel" type="Label" parent="." unique_id=2066605196]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TimeLabel" type="Label" parent="." unique_id=135012446]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
