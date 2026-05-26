@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://skjo67mxbvv2"
+valid=false
+
+[deps]
+
+source_file="res://Font/Peaberry Bitmap Fonts/2. WhitePeaberry Outline/WhitePeaberryOutline.fnt (BMFont Text)/WhitePeaberryOutline.fnt"
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

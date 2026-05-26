@@ -5,6 +5,7 @@
 [node name="SoundManager" type="Node" unique_id=1905734791]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=881742229]
+process_mode = 3
 stream = ExtResource("1_g5net")
-volume_db = -20.0
+volume_db = -30.0
 autoplay = true

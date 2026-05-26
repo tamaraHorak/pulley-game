@@ -1,12 +1,11 @@
 extends Control
 
-@onready var congratulations_label = $CongratulationsLabel
-@onready var time_label = $CenterContainer2/PanelContainer/MarginContainer/VBoxContainer/TimeLabel
+@onready var congratulations_label = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CongratulationsLabel
+@onready var time_label = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/TimeLabel
 
 func _ready():
 	GameManager.stop_timer()
-	congratulations_label.text = "Congratulations!"
-	time_label.text = "Your Time: " + GameManager.get_time_string()
+	time_label.text = "Your Time:\n" + GameManager.get_time_string()
 	print(GameManager.get_time_string())
 	await get_tree().process_frame  
 	await UIManager.fade_in()
