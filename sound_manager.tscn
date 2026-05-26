@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dkaewup5lx3ci"]
 
+[ext_resource type="AudioStream" uid="uid://d0suwtowpiign" path="res://Sounds/italian_music.mp3" id="1_g5net"]
+
 [node name="SoundManager" type="Node" unique_id=1905734791]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=881742229]
+stream = ExtResource("1_g5net")
+volume_db = -20.0
 autoplay = true
