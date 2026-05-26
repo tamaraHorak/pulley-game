@@ -18,6 +18,7 @@ func _process(_delta):
 	# Skip tout le dialogue avec TAB
 	if Input.is_action_just_pressed("skip"):
 		get_tree().change_scene_to_file("res://Back_1.tscn")
+		GameManager.start_timer()
 		return
 	
 	# Avance dans le dialogue avec Espace
@@ -28,3 +29,4 @@ func _process(_delta):
 			$Player.show_dialogue(npc.dialogue[npc.dialogue_index])
 		else:
 			get_tree().change_scene_to_file("res://Back_1.tscn")
+			GameManager.start_timer()
