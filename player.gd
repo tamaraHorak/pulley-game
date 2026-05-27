@@ -46,6 +46,7 @@ func _physics_process(_delta):
 	if is_crouching:
 		$CollisionCrouching.disabled = false
 		$CollisionStanding.disabled = true
+		$AnimatedSprite2D.offset.y = 10
 		if Input.is_action_pressed("move_right"):
 			velocity.x = current_speed / 2.0  # slower while crouching
 			$AnimatedSprite2D.flip_h = false
@@ -58,6 +59,9 @@ func _physics_process(_delta):
 			velocity.x = 0
 			$AnimatedSprite2D.play("crouching" + anim_suffix)
 	else:
+		$AnimatedSprite2D.offset.y = 0
+		$CollisionCrouching.disabled = true
+		$CollisionStanding.disabled = false
 		# Movement
 		if Input.is_action_pressed("move_right"):
 			velocity.x = current_speed
@@ -116,8 +120,13 @@ func _process(_delta):
 func drop_sac():
 	has_sac = false
 	var sac = sac_scene.instantiate()
-	sac.position = position
+	var direction = -1 if $AnimatedSprite2D.flip_h else 1
+	sac.position = position + Vector2(30 * direction, 0)
 	get_parent().add_child(sac)
+	sac.set_collision_layer_value(1, false)
+	await get_tree().create_timer(0.2).timeout
+	if is_instance_valid(sac):
+		sac.set_collision_layer_value(1, true)
 	print("drop")
 
 func show_dialogue(line):

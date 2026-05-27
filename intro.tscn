@@ -41,7 +41,7 @@ dialogue = [{
 "text": "Heureusement tu as suivi le cours de Mécanique I à l'EPFL !"
 }, {
 "speaker": "Paolo Ricci",
-"text": "Tu vas devoir utiliser des pendules, les scas de farines et des poulies pour franchir les niveaux."
+"text": "Tu vas devoir utiliser des pendules, les sacs de farines et des poulies pour franchir les niveaux."
 }, {
 "speaker": "Piccolo",
 "text": "Et les commandes du jeu ?"
@@ -80,7 +80,7 @@ dialogue = [{
 "text": "Je serai présent au début de chaque niveau pour t'expliquer la mécanique physique à maîtriser."
 }, {
 "speaker": "Paolo Ricci",
-"text": "Il te suffira de venir venir vers moi pour déclencher mes explications."
+"text": "Il te suffira de venir vers moi pour déclencher mes explications."
 }, {
 "speaker": "Piccolo",
 "text": "Génial, merci ! Ça va m'aider à comprendre comment utiliser tous ces outils."
