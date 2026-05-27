@@ -52,7 +52,7 @@ texture = ExtResource("3_88vji")
 [node name="RightPulleyPoint" type="Marker2D" parent="PulleyRight" unique_id=1672290786]
 
 [node name="GatePlank" type="AnimatableBody2D" parent="." unique_id=1906436739]
-position = Vector2(189, -456)
+position = Vector2(208, -411)
 
 [node name="Sprite2D" type="Sprite2D" parent="GatePlank" unique_id=1752493544]
 position = Vector2(820.99994, 347)
