@@ -7,6 +7,8 @@ func _ready():
 	await UIManager.fade_in()
 
 func _on_start_pressed():
+	GameManager.reset_timer()
+	GameManager.start_timer()
 	get_tree().change_scene_to_file("res://intro.tscn")
 
 func _on_options_pressed():

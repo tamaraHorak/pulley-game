@@ -1,0 +1,170 @@
+[gd_scene format=4 uid="uid://i31a5voiujj7"]
+
+[ext_resource type="Texture2D" uid="uid://cpg1seojwhhei" path="res://Tileset/2 Background/Day/1.png" id="1_ofvht"]
+[ext_resource type="Script" uid="uid://cvbj123r6sv7t" path="res://back_5.gd" id="1_oi4u1"]
+[ext_resource type="Texture2D" uid="uid://d3d1ob1vtnpgm" path="res://Tileset/2 Background/Day/2.png" id="2_eed5r"]
+[ext_resource type="Texture2D" uid="uid://coddhkru4gx3j" path="res://Tileset/2 Background/Day/3.png" id="3_027tf"]
+[ext_resource type="Texture2D" uid="uid://b2h1cw7jjkia0" path="res://Tileset/2 Background/Day/4.png" id="4_530h8"]
+[ext_resource type="Texture2D" uid="uid://djnwpfaqsebeu" path="res://Tileset/1 Tiles/Tile_12.png" id="4_oi4u1"]
+[ext_resource type="Texture2D" uid="uid://cly0i4gv8tuny" path="res://Tileset/1 Tiles/Tile_13.png" id="5_nn2u7"]
+[ext_resource type="Texture2D" uid="uid://bw1700gmxa1f6" path="res://Tileset/1 Tiles/Tile_01.png" id="8_42p31"]
+[ext_resource type="Texture2D" uid="uid://cgmpx2aertmwh" path="res://Tileset/1 Tiles/Tile_02.png" id="9_5pk8c"]
+[ext_resource type="Texture2D" uid="uid://bhcy8e1dc4swt" path="res://Tileset/1 Tiles/Tile_04.png" id="10_eoi6p"]
+[ext_resource type="Texture2D" uid="uid://c2ss1wlcco075" path="res://Tileset/1 Tiles/Tile_10.png" id="11_qe5dm"]
+[ext_resource type="Texture2D" uid="uid://bloeo7sdj54sa" path="res://Tileset/1 Tiles/Tile_11.png" id="12_2o7xr"]
+[ext_resource type="PackedScene" uid="uid://dume0xbsh2c3k" path="res://player.tscn" id="13_j6esm"]
+[ext_resource type="PackedScene" uid="uid://v62uq7cwk7ye" path="res://door.tscn" id="14_dnjjk"]
+[ext_resource type="PackedScene" uid="uid://fe47isyatfqm" path="res://npc_instructor.tscn" id="15_4ok5x"]
+[ext_resource type="PackedScene" uid="uid://civsirxr3eay" path="res://pulley_mechanism.tscn" id="16_oi4u1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl824"]
+texture = ExtResource("1_ofvht")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwfc7"]
+texture = ExtResource("2_eed5r")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fbxmh"]
+texture = ExtResource("4_oi4u1")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g05ft"]
+texture = ExtResource("5_nn2u7")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wmf4l"]
+texture = ExtResource("3_027tf")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yng00"]
+texture = ExtResource("4_530h8")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_id17f"]
+texture = ExtResource("8_42p31")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10mun"]
+texture = ExtResource("9_5pk8c")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o07we"]
+texture = ExtResource("10_eoi6p")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvkki"]
+texture = ExtResource("11_qe5dm")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5is2u"]
+texture = ExtResource("12_2o7xr")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.850716, -16.046753, 16.242786, -15.990742, 15.962734, 15.99074, -15.962738, 15.878721)
+
+[sub_resource type="TileSet" id="TileSet_tqlyp"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_kl824")
+sources/1 = SubResource("TileSetAtlasSource_bwfc7")
+sources/2 = SubResource("TileSetAtlasSource_wmf4l")
+sources/3 = SubResource("TileSetAtlasSource_yng00")
+sources/4 = SubResource("TileSetAtlasSource_id17f")
+sources/5 = SubResource("TileSetAtlasSource_10mun")
+sources/7 = SubResource("TileSetAtlasSource_o07we")
+sources/8 = SubResource("TileSetAtlasSource_pvkki")
+sources/9 = SubResource("TileSetAtlasSource_5is2u")
+sources/10 = SubResource("TileSetAtlasSource_fbxmh")
+sources/11 = SubResource("TileSetAtlasSource_g05ft")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_snkkq"]
+normal = Vector2(-0.01639124, 0.99986565)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oi4u1"]
+normal = Vector2(1, 0)
+distance = -2.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nn2u7"]
+normal = Vector2(-1, 0)
+distance = -1920.0
+
+[node name="Node2D" type="Node2D" unique_id=777943668]
+script = ExtResource("1_oi4u1")
+
+[node name="Sky" type="TileMapLayer" parent="." unique_id=1534277841]
+use_parent_material = true
+scale = Vector2(3.4104376, 3.474267)
+tile_map_data = PackedByteArray("AAARAAkAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tqlyp")
+
+[node name="Shadows" type="TileMapLayer" parent="." unique_id=202610993]
+use_parent_material = true
+scale = Vector2(3.4104366, 3.4742658)
+tile_map_data = PackedByteArray("AAARAAkAAgAAAAAAAAARAAgAAQAAAAAAAAANAAkAAwAAAAAAAAA=")
+tile_set = SubResource("TileSet_tqlyp")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=528300435]
+use_parent_material = true
+position = Vector2(-1.0000001, 0)
+scale = Vector2(2.0504372, 2.1142664)
+tile_map_data = PackedByteArray("AAACABsABQAAAAAAAAAEABsABQAAAAAAAAAGABsABQAAAAAAAAAIABsABQAAAAAAAAAKABsABQAAAAAAAAAMABsABQAAAAAAAAAOABsABQAAAAAAAAAAABsABAAAAAAAAAAAAB0ACAAAAAAAAAAAAB8ACAAAAAAAAAACAB8ACQAAAAAAAAADAB8ACQAAAAAAAAAEAB8ACQAAAAAAAAAFAB8ACQAAAAAAAAAGAB8ACQAAAAAAAAAHAB8ACQAAAAAAAAAIAB8ACQAAAAAAAAAJAB8ACQAAAAAAAAAKAB8ACQAAAAAAAAALAB8ACQAAAAAAAAAMAB8ACQAAAAAAAAANAB8ACQAAAAAAAAAOAB8ACQAAAAAAAAACAB0ACgAAAAAAAAAEAB0ACgAAAAAAAAAGAB0ACgAAAAAAAAAIAB0ACgAAAAAAAAAKAB0ACgAAAAAAAAAMAB0ACgAAAAAAAAAOAB0ACgAAAAAAAAA=")
+tile_set = SubResource("TileSet_tqlyp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=553809471]
+
+[node name="Ceiling" type="CollisionShape2D" parent="StaticBody2D" unique_id=1558534926]
+shape = SubResource("WorldBoundaryShape2D_snkkq")
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D" unique_id=976186199]
+shape = SubResource("WorldBoundaryShape2D_oi4u1")
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D" unique_id=1566168620]
+shape = SubResource("WorldBoundaryShape2D_nn2u7")
+
+[node name="Player" parent="." unique_id=305184656 instance=ExtResource("13_j6esm")]
+position = Vector2(147, 841)
+scale = Vector2(0.5, 0.574)
+
+[node name="Door" parent="." unique_id=173359987 instance=ExtResource("14_dnjjk")]
+position = Vector2(1039, 964.00006)
+scale = Vector2(0.7, 0.7)
+next = "res://Back_2.tscn"
+
+[node name="npc_instructor" parent="." unique_id=2063979621 instance=ExtResource("15_4ok5x")]
+position = Vector2(41, 839)
+scale = Vector2(0.25, 0.25)
+dialogue = [{
+"speaker": "Piccolo",
+"text": "Cette plateforme oscillante ne peut pas être là pour rien…"
+}, {
+"speaker": "Paolo Ricci",
+"text": "En effet, pour pouvoir traverser ce gouffre, tu vas devoir t’aider de son mouvement de pendule!"
+}, {
+"speaker": "Piccolo",
+"text": "Hein?"
+}, {
+"speaker": "Paolo Ricci",
+"text": "En appliquant le principe de conservation des vitesses, tu peux utiliser la vitesse verticale de la plateforme pour sauter encore plus haut!"
+}, {
+"speaker": "Piccolo",
+"text": "Hum… on va tester ça…"
+}]
+
+[node name="PulleyMechanism" parent="." unique_id=1015224254 instance=ExtResource("16_oi4u1")]
+position = Vector2(533, 902)

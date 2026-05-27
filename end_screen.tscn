@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cscglt5nf4k8n"]
+
+[ext_resource type="Texture2D" uid="uid://drwhxrgmbj33k" path="res://Tileset/2 Background/Night/1.png" id="1_be1gp"]
+[ext_resource type="Script" uid="uid://bbqdsulki0p7l" path="res://end_screen.gd" id="1_kaxt3"]
+[ext_resource type="Texture2D" uid="uid://hjiicnm6op5n" path="res://Tileset/2 Background/Night/2.png" id="2_kaxt3"]
+[ext_resource type="Texture2D" uid="uid://piw6qoybob6s" path="res://Tileset/2 Background/Night/3.png" id="3_2afhe"]
+[ext_resource type="Texture2D" uid="uid://e4nrsxxj1f6m" path="res://Menu Buttons/Large Buttons/Large Buttons/Menu Button.png" id="5_kaxt3"]
+[ext_resource type="Texture2D" uid="uid://d0twnvg4tm1li" path="res://Menu Buttons/Large Buttons/Pressed Buttons/Menu  col_Button.png" id="6_kaxt3"]
+[ext_resource type="Texture2D" uid="uid://wpm2ebpd1qyx" path="res://art/Bravo.png" id="7_2afhe"]
+[ext_resource type="FontFile" uid="uid://br64u8qeyeguf" path="res://Font/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="8_nbj2a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o4t1"]
+texture = ExtResource("1_be1gp")
+0:0/size_in_atlas = Vector2i(36, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8qtwp"]
+sources/0 = SubResource("TileSetAtlasSource_0o4t1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotk1"]
+texture = ExtResource("2_kaxt3")
+0:2/size_in_atlas = Vector2i(36, 18)
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w44g7"]
+texture = ExtResource("3_2afhe")
+0:5/size_in_atlas = Vector2i(36, 15)
+0:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cm266"]
+sources/0 = SubResource("TileSetAtlasSource_iotk1")
+sources/1 = SubResource("TileSetAtlasSource_w44g7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4wn"]
+
+[sub_resource type="FontVariation" id="FontVariation_f33ud"]
+base_font = ExtResource("8_nbj2a")
+
+[node name="End screen" type="Control" unique_id=505925719]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kaxt3")
+
+[node name="Sky" type="TileMapLayer" parent="." unique_id=1104021785]
+scale = Vector2(3.3999999, 3.5200002)
+tile_map_data = PackedByteArray(0, 0, 17, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8qtwp")
+
+[node name="Buildings" type="TileMapLayer" parent="." unique_id=378355440]
+scale = Vector2(3.3999999, 3.5200002)
+tile_map_data = PackedByteArray(0, 0, 17, 0, 10, 0, 0, 0, 0, 0, 2, 0, 0, 0, 17, 0, 12, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+tile_set = SubResource("TileSet_cm266")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1288488714]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=164402431]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0k4wn")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=46567007]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1670034979]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 80
+
+[node name="CongratulationsLabel" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=270605478]
+layout_mode = 2
+texture = ExtResource("7_2afhe")
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1673440210]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer" unique_id=1919613356]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="SpacerTop" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=665078174]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=135012446]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_f33ud")
+theme_override_font_sizes/font_size = 100
+text = "EXEMPLE"
+horizontal_alignment = 1
+
+[node name="SpacerMid" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1220102233]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Menu" type="TextureButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1590017842]
+layout_mode = 2
+texture_normal = ExtResource("5_kaxt3")
+texture_pressed = ExtResource("6_kaxt3")
+
+[node name="SpacerBottom" type="Control" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1150074982]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
