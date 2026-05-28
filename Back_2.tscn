@@ -164,3 +164,16 @@ distance = 300
 [node name="npc_instructor" parent="." unique_id=2063979621 instance=ExtResource("16_k8tuo")]
 position = Vector2(41, 837)
 scale = Vector2(0.25, 0.25)
+dialogue = [{
+"speaker": "Piccolo",
+"text": "Euh... elles vont vite dis donc..."
+}, {
+"speaker": "Paolo Ricci",
+"text": "C'est une bonne chose, tu devrais pouvoir utiliser leur inertie pour te propulser vers l'avant puis vers le haut."
+}, {
+"speaker": "Piccolo",
+"text": "Dis comme ça, ça à l'air plus simple que sur le pendule. "
+}, {
+"speaker": "Paolo Ricci",
+"text": "Peut-être, mais n'oublie pas que si la plateforme va vers l'arrière et que tu sautes, tu vas perdre beaucoup de hauteur..."
+}]

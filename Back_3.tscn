@@ -162,3 +162,13 @@ position = Vector2(203, 867)
 [node name="npc_instructor" parent="." unique_id=2063979621 instance=ExtResource("17_lyv77")]
 position = Vector2(43, 838)
 scale = Vector2(0.25, 0.25)
+dialogue = [{
+"speaker": "Piccolo",
+"text": "Les premiers sauts ont l'air simple, mais je doute pouvoir passer au dessus de la dernière marche."
+}, {
+"speaker": "Paolo Ricci",
+"text": "Le sac devrait pouvoir t'aider, mais attentio, il pèse lourd."
+}, {
+"speaker": "Piccolo",
+"text": "Génial, premier leg day de l'année..."
+}]

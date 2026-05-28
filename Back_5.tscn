@@ -148,19 +148,19 @@ position = Vector2(41, 839)
 scale = Vector2(0.25, 0.25)
 dialogue = [{
 "speaker": "Piccolo",
-"text": "Cette plateforme oscillante ne peut pas être là pour rien…"
+"text": "Le chemin est bloqué..."
 }, {
 "speaker": "Paolo Ricci",
-"text": "En effet, pour pouvoir traverser ce gouffre, tu vas devoir t’aider de son mouvement de pendule!"
+"text": "Pourtant tu dois pouvoir déplacer l'obstacle."
 }, {
 "speaker": "Piccolo",
-"text": "Hein?"
+"text": "Comment ça?"
 }, {
 "speaker": "Paolo Ricci",
-"text": "En appliquant le principe de conservation des vitesses, tu peux utiliser la vitesse verticale de la plateforme pour sauter encore plus haut!"
+"text": "Les deux mécanismes que tu vois au dessus permettent de le soulever en plaçant une masse sur la plateforme."
 }, {
 "speaker": "Piccolo",
-"text": "Hum… on va tester ça…"
+"text": "Le sac de farine devrait faire l'affaire..."
 }]
 
 [node name="PulleyMechanism" parent="." unique_id=1015224254 instance=ExtResource("16_oi4u1")]
