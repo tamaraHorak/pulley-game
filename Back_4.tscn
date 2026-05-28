@@ -158,10 +158,10 @@ position = Vector2(1055, 562)
 scale = Vector2(0.7, 0.7)
 next = "res://Back_5.tscn"
 
-[node name="Character2D" parent="." unique_id=327463806 instance=ExtResource("16_pbffy")]
+[node name="Sac" parent="." unique_id=327463806 instance=ExtResource("16_pbffy")]
 position = Vector2(243, 631)
 
-[node name="Character2D2" parent="." unique_id=231946613 instance=ExtResource("16_pbffy")]
+[node name="Sac_2" parent="." unique_id=231946613 instance=ExtResource("16_pbffy")]
 position = Vector2(178, 630)
 
 [node name="Pendulum" parent="." unique_id=1197021097 instance=ExtResource("17_is2wa")]

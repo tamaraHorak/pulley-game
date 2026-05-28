@@ -12,7 +12,7 @@ func _ready():
 
 func pause():
 	var scene = get_tree().current_scene.scene_file_path
-	if scene == "res://main_menu.tscn" or scene == "res://end_screen.tscn" or scene == "res://options.tscn":
+	if scene == "res://main_menu.tscn" or scene == "res://end_screen.tscn" or scene == "res://intro.tscn" or scene == "res://options.tscn":
 		return
 	if is_transitioning:
 		return

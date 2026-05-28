@@ -139,7 +139,7 @@ shape = SubResource("WorldBoundaryShape2D_oi4u1")
 shape = SubResource("WorldBoundaryShape2D_nn2u7")
 
 [node name="Door" parent="." unique_id=173359987 instance=ExtResource("13_3ccdj")]
-position = Vector2(1028, 485)
+position = Vector2(1028, 526)
 scale = Vector2(0.7, 0.7)
 next = "res://end_screen.tscn"
 
@@ -164,8 +164,11 @@ dialogue = [{
 }]
 
 [node name="PulleyMechanism" parent="." unique_id=1015224254 instance=ExtResource("15_axjsa")]
-position = Vector2(660, 793.99994)
+position = Vector2(587, 815.99994)
 scale = Vector2(0.645, 0.645)
+press_distance = 300.0
+extra_platform_spacing = 500.0
+extra_pulley_spacing = -100.0
 
 [node name="Player" parent="." unique_id=305184656 groups=["sac"] instance=ExtResource("16_kjps4")]
 position = Vector2(167, 838)
